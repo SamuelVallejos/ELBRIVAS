@@ -1,0 +1,27 @@
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+.bg{
+  --ion-background-color: #1a1d52 ;
+  --background: #1a1d52;
+}
+.bg2{
+  color: #21d6a0;
+}
+.centrado{
+    text-align: center;
+}
+
+.arrow{
+    position:absolute;
+    margin-left: 20px;
+    width: 30px;
+    height: 100px;
+}

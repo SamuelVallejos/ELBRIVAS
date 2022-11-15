@@ -1,0 +1,54 @@
+<ion-header class="hamburger ion-no-border">
+  <ion-toolbar class="bg">
+    <ion-buttons slot="start">
+      <ion-back-button class="bg2"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <form [formGroup]="FormularioUsuario" (ngSubmit)="submitForm()">
+
+    <h1 class="centrado bg2">Registro</h1>
+    <ion-img src="assets/icon/drivolo.png" class="logoAjustado"></ion-img>
+
+    <ion-item class="bg bg2">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item class="bg bg2">
+      <ion-label position="floating">Telefono (+569)</ion-label>
+      <ion-input type="text" formControlName="telefono"></ion-input>
+    </ion-item>
+    <ion-item class="bg bg2">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input matInput placeholder="ejemplo@ejemplo.com" type="email" formControlName="correo"></ion-input>
+    </ion-item>
+    <ion-item class="bg bg2">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" name="contrasena" formControlName="contrasena"></ion-input>
+      <div *ngIf="submitted && f.contrasena.error">
+        <div *ngIf="f.contrasena.errors.requered">La contraseña es requerida</div>
+        <div *ngIf="f.contrasena.errors.midLenght">La contraseña tiene que tener minimo 6 letras o numeros</div>
+      </div>
+    </ion-item>
+    <ion-item class="bg bg2">
+      <ion-label position="floating">Repetir Contraseña</ion-label>
+      <ion-input type="password" name="contrasena2" formControlName="contrasena2"></ion-input>
+      <div *ngIf="submitted && f.contrasena2.error">
+        <div *ngIf="f.contrasena2.errors.requered">Confirma tu contraseña</div>
+        <div *ngIf="f.contrasena2.errors.MustMatch">Las contraseña no son las mismas</div>
+      </div>
+    </ion-item>
+    <ion-grid>
+
+      <ion-row>
+        <ion-col class="centrado">
+          <ion-button type="submit" class="centrado" style="--background:#21d6a0;color: #1a1d52;">
+            Confirmar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </form>
+</ion-content>

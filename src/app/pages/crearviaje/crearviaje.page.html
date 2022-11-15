@@ -1,0 +1,51 @@
+<ion-header class="bg ion-no-border">
+  <ion-toolbar class="bg ion-no-border">
+    <ion-buttons slot="start">
+      <ion-back-button class="bg2" style="position: absolute;"></ion-back-button>
+    </ion-buttons>
+    <h1 class="bg2 centrado" style="margin-top: 15px;">Crea tu Viaje</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+
+  <ion-list class="fondo">
+    <ion-item class="bg bg2">
+      <ion-select placeholder="Inicio Viaje">
+        <ion-select-option style="--ion-background-color:#ffff !important" *ngFor="let s of sedes"
+          value="sede_{{ s.sede }}">
+          {{ s.sede }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="bg bg2">
+      <ion-select placeholder="Destino Viaje">
+        <ion-select-option class="colorAlerta" *ngFor="let c of comunas" value="comuna_{{ c.comuna }}">
+          {{ c.comuna }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <form [formGroup]="FormularioViaje" (ngSubmit)="submitForm()">
+    <ion-item class="bg bg2">
+      <ion-label position="stacked"></ion-label>
+      <ion-input formControlName="asientos" placeholder="Asientos Disponibles"></ion-input>
+    </ion-item>
+    <ion-item class="bg bg2">
+      <ion-label position="stacked"></ion-label>
+      <ion-input placeholder="ejemplo 14:30" formControlName="horaSalida" placeholder="Hora de Salida"></ion-input>
+    </ion-item>
+    <ion-item class="bg bg2">
+      <ion-label position="stacked"></ion-label>
+      <ion-input formControlName="tarifa" placeholder="Tarifa"></ion-input>
+    </ion-item>
+
+    <h1 class="centrado">
+      <ion-button type="submit" (click)="presentAlert()">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </ion-button>
+    </h1>
+  </form>
+
+</ion-content>

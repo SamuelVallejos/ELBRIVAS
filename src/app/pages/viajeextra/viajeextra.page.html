@@ -1,0 +1,37 @@
+<ion-header class="bg" style="background-color: #1a1d52;">
+    <ion-toolbar class="bg ion-no-border">
+        <ion-buttons slot="start">
+          <ion-back-button class="bg2" style="position: absolute;"></ion-back-button>
+        </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg" style="background-color: #1a1d52;">
+
+    <ion-row>
+        <ion-col size="1">
+            <div class="container">
+            </div>
+        </ion-col>
+        <ion-col size="10" style="height:350px;margin-top:15px;">
+            <div class="container">
+                <capacitor-google-map #map class="bdr"></capacitor-google-map>
+            </div>
+        </ion-col>
+        <ion-col size="1">
+            <div class="container">
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <div style="text-align: center;">
+        <ion-icon name="map-outline" class="carnt"></ion-icon>
+    </div>
+    <div style="text-align: center;">
+        <h3>Latitud: {{ geoData1 }}</h3>
+        <h3>Longitud: {{ geoData2 }}</h3>
+        <br>
+        <ion-button [routerLink]="['/home']">Confirmar</ion-button>
+    </div>
+
+</ion-content>

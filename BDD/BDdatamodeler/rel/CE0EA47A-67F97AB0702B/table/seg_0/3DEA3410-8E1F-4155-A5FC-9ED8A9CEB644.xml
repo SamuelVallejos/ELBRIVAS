@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3DEA3410-8E1F-4155-A5FC-9ED8A9CEB644" name="vehiculo">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>88E212CC-F7E3-BD71-2C6A-D82FA87495AA</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="patente" id="C1871277-3196-A45E-9663-DD6807E47C4C">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>853867BF-4F22-22BD-6E40-99BDA4A6F9C6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1848D64B-5BB8-F729-1844-5EB378ABE92A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="marca" id="37AE2D35-75EB-16D1-2FFB-44487968D4EB">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>F487A351-29AE-A57E-7FCB-BA0133E0BFA4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>36210B44-3CDC-1347-B3A2-136E1178982C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="modelo" id="365AE164-1582-1C5B-8E61-BE1972F365E3">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>AA25AFF6-383C-DE4E-7274-899DBE8F138D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<domain>8BF518C4-5723-5962-E819-0ED4A72BF1FB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ano" id="101E3F1D-46E6-7F46-7094-CFC484656376">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>D391AC6B-B11C-8634-16D9-BD9088521D53</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>88946730-56B1-DCC4-A1CA-8751F4AD8FB5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="asientos" id="95F79C58-950C-279B-18B8-A41AF346D3B8">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>3C96E7D0-9CF5-138A-0DE1-B5D9148D5F85</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>A87BD964-76C6-3C1B-EA69-D2A0BBC562E7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="color" id="C60F1E41-ABAF-8BA7-ACFF-DC08402F3B5A">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>B8DA7072-DF48-2CBD-4DAB-6E49F0BDD41F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4911DC94-5331-C267-151B-9BA6DCD7BC0B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usuario_correo" id="DCB56C6B-8270-F1F5-B89F-9224D18F651B">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>FF0BFB0A-DE49-B43E-260B-99B19F3287C3</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>177EED62-7858-4267-1DA9-8AB531F5F3EE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F054498B-5EA0-4FE3-84D1-CA20A9D255F3" referredColumn="386D18E0-59CA-B1D1-41A4-9335A4BC9F8F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D70C1078-093C-25DA-6FA6-DEAF0E17EC56" name="vehiculo_pk">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>D2CD51F6-6A8C-436E-BD7D-0DF7C8E1EA19</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1871277-3196-A45E-9663-DD6807E47C4C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C137ADD8-E7EF-7B7A-F063-54BC83003AC0" name="vehiculo_usuario_fk">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCB56C6B-8270-F1F5-B89F-9224D18F651B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

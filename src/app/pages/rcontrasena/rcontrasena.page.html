@@ -1,0 +1,35 @@
+<ion-header class="hamburger ion-no-border">
+  <ion-toolbar class="bg">
+    <ion-buttons slot="start">
+      <ion-back-button class="bg2"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <h1 class="centrado bg2">Recuperar <br>
+    Contraseña</h1>
+  <ion-img src="assets/icon/drivolo.png"></ion-img>
+
+  <!-- inicio del pormulario "RECUPERAR CONTRASEÑA" -->
+
+  <h3 class="bg2 centrado">Ingresa tu correo electronico <br>para restablecer 
+    la contraseña
+  </h3>
+  <ion-item class="bg bg2">
+    <ion-label position="floating">Correo Electronico</ion-label>
+    <ion-input matInput placeholder="ejemplo@ejemplo.com"></ion-input>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col style="text-align: center;">
+        <ion-button style="--background:#21d6a0;color: #1a1d52;" [routerLink]="['/pagina2']">Confirmar</ion-button>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Fin del pormulario "RECUPERAR CONTRASEÑA" -->
+
+</ion-content>

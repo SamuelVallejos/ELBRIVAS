@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-menu-toggle auto-hide="false">
+    <ion-menu side="start" menuId="first" contentId="main">
+      <ion-header class="ion-no-border">
+        <ion-toolbar class="hm hm2 centrado">
+          <ion-img src="assets/icon/userDefault.png" class="img"></ion-img>
+          <h2 style="margin-top: 20px;">Diego</h2>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="hm bg2 ion-no-border">
+        <ion-list class="hm ion-no-border">
+          <ion-item [routerLink]="'/perfil'" class="hm tm">
+            <ion-icon name="person-circle-outline" class="ms hamburger tm"></ion-icon>Perfil
+          </ion-item>
+          <ion-item [routerLink]="'/misvehiculos'" class="hm tm">
+            <ion-icon name="car-sport-outline" class="ms hamburger tm"></ion-icon>Mis autos
+          </ion-item>
+          <ion-item [routerLink]="'/a'" class="hm tm">
+            <ion-icon name="document-outline" class="ms hamburger tm"></ion-icon>Prueba 404
+          </ion-item>
+          <ion-item [routerLink]="'/acercade'" class="hm tm">
+            <ion-icon name="alert-circle-outline"class="ms hamburger tm"></ion-icon>Acerca de
+          </ion-item>
+          <ion-item [routerLink]="'/inicio-sesion'" class="hm tm" (click)="presentAlert()">
+            <ion-icon name="lock-closed-outline" class="ms hamburger tm"></ion-icon>Cerrar Sesión
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  </ion-menu-toggle>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

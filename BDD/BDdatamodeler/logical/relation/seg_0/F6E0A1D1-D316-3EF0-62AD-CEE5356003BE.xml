@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="viaje_vehiculo_fk" directorySegmentName="seg_0" id="F6E0A1D1-D316-3EF0-62AD-CEE5356003BE">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>824507C8-CF4F-B767-A073-378445C58AFB</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<sourcePk>FD1C0497-6056-0613-D10B-1F2D4AAE8807</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>6F087A99-C143-83CB-55B7-482C2022EE53</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DC346F66-93CA-0850-1F2E-04FD36F4AB19</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

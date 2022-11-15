@@ -1,0 +1,7 @@
+{
+  "name": "drivolo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

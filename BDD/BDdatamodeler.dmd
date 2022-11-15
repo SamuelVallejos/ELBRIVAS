@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="BDdatamodeler" id="294589A3-F0EA-66AC-8EA4-A5759D0E9AA8" version="3.5">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:11:45 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>294589A3-F0EA-66AC-8EA4-A5759D0E9AA8</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="933B7AA1-5FDE-329B-92BB-E70D4D0FE593">
+<designStoragePath>C:\Modelao</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

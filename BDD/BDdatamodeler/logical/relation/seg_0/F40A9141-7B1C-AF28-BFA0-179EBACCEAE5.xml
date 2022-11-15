@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="recorrido_viaje_fk" directorySegmentName="seg_0" id="F40A9141-7B1C-AF28-BFA0-179EBACCEAE5">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>C2A45850-2EFE-7E4B-A97D-370E9036CF90</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<sourcePk>B0E967DA-B1AB-4D47-BB51-93F6EB242306</sourcePk>
+<dominantRole>DC346F66-93CA-0850-1F2E-04FD36F4AB19</dominantRole>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>DC346F66-93CA-0850-1F2E-04FD36F4AB19</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>3F86E7C8-E098-8294-B205-A484FF215F71</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

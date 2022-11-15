@@ -1,0 +1,82 @@
+WIP
+    implementar validaciones (dynamic forms (no estoy seguro))
+    Contraseña min-max 6 - 15
+    mensajes de falta algo
+
+pages
+    crear viaje
+    editar perfil
+    mapa
+    detalles viaje
+    poner mas mensajes
+
+
+Por hacer-
+    administrador
+	    habilitar/desavilitar usuarios
+
+    Añador API
+        Camara amedia
+        geolocalizacion amedia
+        mapa necesario
+
+    Tablas BDD
+    poder crear una carrera como conductor (lista)
+    poder modificar el perfil
+	Locazion/sitio de los formularios 
+
+	Arreglar barras negras en vehiculo y el lateral menu
+
+    Auto lleno = borrar carrera/Viaje/pololo/nose
+        confirmacion para viaje
+        poder cancelar la reserva
+
+    Pestaña de informacion aplicacion (opcional)
+
+    (Buscador) en viaje
+
+	Arreglar iconos
+----
+
+
+angular material
+	si se quiere se borra
+Los registros de usuario
+	Borrar
+Persistencia de datos
+	en storage / sqlite
+API
+	Externas
+	Internas - geolocalizacion
+----
+Hecho
+
+    Perfil hacer
+    Viaje este funcional
+    Añadir Back buttons
+    Llenar las variables
+    Boton en conductor
+    2 Animaciones
+-----------------------------------------------------------------------------
+
+    ---Finalizar el desarrollo de las páginas de Ingreso de Usuario, 
+            Restablecer Contraseña y Página de Inicio,
+            entre otras con las siguientes características:
+            o Colores corporativos definidos por el equipo de trabajo.
+            o Imágenes correspondientes a la aplicación
+
+        Alumnos que SI cuentan con movilización propia ingresan a la App 
+        para programar su viaje de retornoy fijan el costo del viaje por persona.
+            2. Alumnos que NO cuentan con movilización propia ingresan a la App 
+                para verificar si hay vehículos concapacidad para transportarlos.
+                a. Si no hay capacidad de transporte, vuelven al paso 2.
+                b. Si hay capacidad de transporte, solicitan viajar
+            3. Los alumnos se reúnen para viajar y pagan su tarifa.
+            4. Comienza el viaje.
+
+
+
+Preguntas al profesor
+    - me que puede mejorar (sugerencias)
+    - hamburguesa que no este en el inicio sesion(bug)
+    - preguntas de json

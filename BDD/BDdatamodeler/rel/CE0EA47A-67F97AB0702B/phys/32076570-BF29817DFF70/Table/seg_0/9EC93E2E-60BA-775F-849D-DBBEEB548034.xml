@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="usuario" directorySegmentName="seg_0" id="9EC93E2E-60BA-775F-849D-DBBEEB548034">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="nombre" id="0EC0C73D-9B2B-68D0-81E4-F4E125950F98">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="correo" id="386D18E0-59CA-B1D1-41A4-9335A4BC9F8F">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="contrasena" id="AA97D0D4-EED6-0B20-0631-8987DB3DCBCC">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="telefono" id="BB337A44-F573-256E-9893-3BF4578EFA6A">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="usuario_pk" id="FF87F1B7-29CF-8699-40C0-7606B8CCA391">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

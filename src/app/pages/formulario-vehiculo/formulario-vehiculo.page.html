@@ -1,0 +1,65 @@
+<ion-content class="bg">
+
+  <ion-text class="bg2">
+
+    <ion-row>
+        <ion-col size="6">
+            <ion-list style="margin-top: 24px;" class="bg ion-no-border">
+                <ion-item class="bg ion-no-border">
+                    <ion-select placeholder="Vehiculo" class="bg2 bg ion-no-borde">
+                        <ion-select-option value="1">CHEVROLET</ion-select-option>
+                        <ion-select-option value="2">SUZUKI</ion-select-option>
+                        <ion-select-option value="3">HIUNDAI</ion-select-option>
+                        <ion-select-option value="4">NISSAN</ion-select-option>
+                        <ion-select-option value="5">TOYOTA</ion-select-option>
+                        <ion-select-option value="6">KIA</ion-select-option>
+                        <ion-select-option value="7">PEUGEOT</ion-select-option>
+                        <ion-select-option value="8">VOLKSWAGEN</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col size="6">
+            <ion-item class="bg bg2">
+                <ion-label position="floating">Modelo Vehiculo</ion-label>
+                <ion-input type="modelo"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-item class="bg bg2">
+        <ion-label position="floating">Color del Vehiculo</ion-label>
+        <ion-input type="colorAuto"></ion-input>
+    </ion-item>
+    <ion-row>
+        <ion-col size="6">
+            <ion-item class="bg bg2">
+                <ion-label position="floating">Patente</ion-label>
+                <ion-input type="patente"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="6">
+            <ion-item class="bg bg2">
+                <ion-label position="floating">Año vehiculo</ion-label>
+                <ion-input type="anno"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-item class="bg bg2">
+        <ion-label position="floating">Telefono (+569)</ion-label>
+        <ion-input type="telefono"></ion-input>
+    </ion-item>
+
+    <ion-grid class="bg">
+        <ion-row class="bg">
+          <ion-col size="2"></ion-col>
+          <ion-col style="text-align: center;">
+            <ion-button  type="submit" class="color2 color pt" [routerLink]="['/x']">Aceptar</ion-button>
+
+          </ion-col>
+          <ion-col size="2"></ion-col>
+        </ion-row>
+      </ion-grid>
+
+</ion-text>
+
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header class="bg ion-no-border">
+  <ion-toolbar class="bg ion-no-border">
+    <div class="centrado">
+      <ion-icon name="people-circle-outline" class="bg2 iconsize"></ion-icon>
+    </div>
+    <h1 class="bg2 centrado">Vehiculo</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-sliding *ngFor="let z of automovil">
+    <ion-card class="bg3 bg4">
+      <ion-row>
+        <ion-col size="8">
+          <ion-row>
+            <ion-col>
+              Patente: {{ z.patente }}
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              Marca Vehiculo: {{ z.marca }}
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-button style="justify-content: flex-end;" [routerLink]="['/crearviaje']"> Crear Viaje </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="4">
+          <ion-icon name="car-sport-outline" class="iconsize"></ion-icon>
+
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-item-sliding>
+
+</ion-content>

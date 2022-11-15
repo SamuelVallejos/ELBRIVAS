@@ -1,0 +1,27 @@
+<ion-header class="ion-no-border" mode="ios">
+  <ion-toolbar class="bg ion-no-border" mode="ios">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" class="hamburger bg2 ion-no-border" mode="ios"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" class="bg" (ionChange)="segmentChanged($event)">
+      <ion-tab-button tab="conducir" class="bg2">
+        <ion-icon name="people-circle-outline" class="bg2"></ion-icon>
+        <ion-label class="bg2">Conductor</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="viaje">
+        <ion-icon name="car-outline" class="bg2"></ion-icon>
+        <ion-label class="bg2">Viaje</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-content>
+
+

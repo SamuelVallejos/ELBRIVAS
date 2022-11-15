@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="viaje" directorySegmentName="seg_0" id="BE17E7A8-2211-4FD3-84E7-103F6B29FB50">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="recorrido_id" id="005DBAE6-4509-6B43-18F0-98CBEDD14CE0">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="vehiculo_patente" id="1909A419-0F6B-B865-7951-E4590C0BC4D2">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="tiempo" id="250D11C4-D840-F14F-065D-EC8B920FE55A">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="tarifa" id="ABBA4BE9-733F-9E7F-9C12-8C09991EC9E4">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id" id="F3D9DFEE-EBD1-E117-792D-274D20FB486A">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="viaje__idx" id="C1B18B50-F1AD-F750-776B-2FBA8834D694">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<logging></logging>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="viaje_vehiculo_fk" id="2F3FCFD1-B8E1-056A-5022-C558D353A895">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="viaje_recorrido_fk" id="7BA537CD-4980-106D-1025-C2B4A11E1151">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="viaje_pk" id="89854855-009D-AEEF-2E80-390E6FF1B845">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

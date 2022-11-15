@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6F087A99-C143-83CB-55B7-482C2022EE53" name="vehiculo">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>3DEA3410-8E1F-4155-A5FC-9ED8A9CEB644</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="patente" id="3884FE8B-9EE1-7D10-C615-B16EB4B38C59">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>C1871277-3196-A45E-9663-DD6807E47C4C</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1848D64B-5BB8-F729-1844-5EB378ABE92A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="marca" id="182B268B-1E18-FB7D-0E3B-8A5C82FC87EB">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>37AE2D35-75EB-16D1-2FFB-44487968D4EB</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>36210B44-3CDC-1347-B3A2-136E1178982C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="modelo" id="C5E567C2-B195-6C4B-0E1A-E5BD270A6730">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>365AE164-1582-1C5B-8E61-BE1972F365E3</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<domain>8BF518C4-5723-5962-E819-0ED4A72BF1FB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ano" id="9B07E80F-E19C-3ED0-A6B6-0696FA19EE71">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>101E3F1D-46E6-7F46-7094-CFC484656376</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>88946730-56B1-DCC4-A1CA-8751F4AD8FB5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="asientos" id="046F9062-7A3F-5CAE-68C4-13F82A672CFE">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>95F79C58-950C-279B-18B8-A41AF346D3B8</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>A87BD964-76C6-3C1B-EA69-D2A0BBC562E7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="color" id="64599D13-55AD-2209-2791-4C4F6386879A">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>C60F1E41-ABAF-8BA7-ACFF-DC08402F3B5A</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4911DC94-5331-C267-151B-9BA6DCD7BC0B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="usuario correo" id="D37A9A41-6A1F-6B15-3BAF-975C401FA195">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>EF6D54C6-EA14-891C-2720-B131483E00B3</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>DBCF30A5-C52C-69C9-2D12-EF7A36729D41</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>177EED62-7858-4267-1DA9-8AB531F5F3EE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FD1C0497-6056-0613-D10B-1F2D4AAE8807" name="vehiculo pk">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:33 UTC</createdTime>
+<generatorID>D70C1078-093C-25DA-6FA6-DEAF0E17EC56</generatorID>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<engineerTo>
+<item key="CE0EA47A-BF04-788E-1CE1-67F97AB0702B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3884FE8B-9EE1-7D10-C615-B16EB4B38C59</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

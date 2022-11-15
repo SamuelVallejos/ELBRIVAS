@@ -1,0 +1,47 @@
+<ion-content class="bg">
+
+  <h1 class="centrado bg2" style="padding-top: 50px;">Iniciar Sesión</h1>
+  <ion-img src="assets/icon/drivolo.png" class="logoAjustado"></ion-img>
+
+<ion-row class="bg bg2 centrado">
+  <ion-col size="12">
+      <mat-form-field appearance="standard">
+        <mat-label class="bg2">Usuario</mat-label>
+        <input matInput placeholder="Coloca tu nombre de Usuario" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        <mat-icon matSuffix></mat-icon>
+      </mat-form-field>
+    </ion-col> 
+      <ion-col size="12" class="bg2">
+        <mat-form-field appearance="standard">
+          <mat-label class="bg2">Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide" style="background-color:#1a1d52">
+            <mat-icon class="bg2">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+    </ion-col>
+  </ion-row>
+
+
+<div class="centrado">
+<button class="bg2" style="background-color:#1a1d52;" [routerLink]="['/rcontrasena']"> ¿Olvidaste tu
+  contraseña?</button>
+</div>
+
+  <ion-grid class="bg">
+    <ion-row class="bg">
+      <ion-col size="2"></ion-col>
+      <ion-col style="text-align: center;">
+        <ion-button type="submit" class="color2 color" [routerLink]="['/home']">Aceptar</ion-button>
+        <div class="centrado" >
+          <button class="bg2" style="background-color:#1a1d52;margin-top:15px" [routerLink]="['/registro']"> Registrarse </button>
+          </div>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Fin del pormulario "INICIAR SESION" -->
+</ion-content>

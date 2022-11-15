@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9EC93E2E-60BA-775F-849D-DBBEEB548034" name="usuario">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>EDC7BC4C-E24F-2BC3-6CB0-C7C69ACD297B</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombre" id="0EC0C73D-9B2B-68D0-81E4-F4E125950F98">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>11572C42-9602-97C8-875A-5C3C9C954BA8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6632BDBB-57A0-7CA0-B9A7-531BC413AC2E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="386D18E0-59CA-B1D1-41A4-9335A4BC9F8F">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>F55D2D00-4F97-F600-9862-870FC893A866</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>177EED62-7858-4267-1DA9-8AB531F5F3EE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefono" id="BB337A44-F573-256E-9893-3BF4578EFA6A">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>CB87AB84-331B-9F91-DAB5-CD2FC4A1924E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>A87BD964-76C6-3C1B-EA69-D2A0BBC562E7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contrasena" id="AA97D0D4-EED6-0B20-0631-8987DB3DCBCC">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>610A4049-7853-ACBB-B78B-B4E941824F53</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F0D25C90-793F-957A-246B-9EDCAA935BAC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FF87F1B7-29CF-8699-40C0-7606B8CCA391" name="usuario_pk">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>AE8C5603-BD83-5775-59DA-2D7421C276FD</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="386D18E0-59CA-B1D1-41A4-9335A4BC9F8F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

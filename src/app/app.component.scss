@@ -1,0 +1,49 @@
+.bg {
+  --ion-background-color: #1a1d52;
+  --background: #1a1d52;
+}
+
+.tm {
+  color: #ffffff;
+}
+
+.bg2 {
+  color: #21d6a0;
+}
+
+.hm {
+  --ion-background-color: #3b3b3b;
+  --background: #3c3c3c;
+  background: #3c3c3c;
+}
+
+.hm2 {
+  color: #ffffff;
+}
+
+.centrado {
+  text-align: center;
+}
+
+.arrow {
+  position: absolute;
+  margin-left: 20px;
+  width: 30px;
+  height: 100px;
+}
+
+.hamburger {
+  --background: #1a1d52;
+}
+
+.ms {
+  margin-right: 10px;
+}
+.img{
+  border-radius: 200px 200px 200px 200px !important;
+  overflow: hidden;
+  height: 65px;
+  width: 65px;
+  position: absolute;
+  margin-left: 10px;
+}

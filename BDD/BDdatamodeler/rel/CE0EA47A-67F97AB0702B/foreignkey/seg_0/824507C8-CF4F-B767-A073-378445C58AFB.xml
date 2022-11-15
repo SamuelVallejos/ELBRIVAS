@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="824507C8-CF4F-B767-A073-378445C58AFB" containerWithKeyObject="BE17E7A8-2211-4FD3-84E7-103F6B29FB50" localFKIndex="2F3FCFD1-B8E1-056A-5022-C558D353A895" name="viaje_vehiculo_fk">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>E15F1CA0-3D71-D077-11EE-7F71F4097104</importedID>
+<referredTableLongName>vehiculo</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3DEA3410-8E1F-4155-A5FC-9ED8A9CEB644</referredTableID>
+<keyObject>D70C1078-093C-25DA-6FA6-DEAF0E17EC56</keyObject>
+<referredKeyID>D70C1078-093C-25DA-6FA6-DEAF0E17EC56</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>patente</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

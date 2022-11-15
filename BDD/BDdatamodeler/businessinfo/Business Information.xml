@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="B99DDF09-51B9-EDE5-0612-2A10D76CD0D7">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:11:45 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C2A45850-2EFE-7E4B-A97D-370E9036CF90" containerWithKeyObject="7B8786C1-649C-4065-8C95-71A0569E9716" localFKIndex="AEA07125-1F16-D330-42D9-F7708F9EB048" name="recorrido_viaje_fk">
+<sourceDDLFile>Modelao.ddl</sourceDDLFile>
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:13:15 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<importedID>EC72B621-ED47-379E-B3B5-B1F71F0D2B80</importedID>
+<referredTableLongName>viaje</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BE17E7A8-2211-4FD3-84E7-103F6B29FB50</referredTableID>
+<keyObject>89854855-009D-AEEF-2E80-390E6FF1B845</keyObject>
+<referredKeyID>89854855-009D-AEEF-2E80-390E6FF1B845</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

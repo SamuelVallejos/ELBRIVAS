@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="F6A5DF89-64C5-1860-A12C-B7B01539B3D5">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:11:45 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="C854C530-4DED-06ED-8D87-7F2A15D821CF" mainViewID="81138323-067A-4A0E-6884-FEBBA9998D5D">
+<createdBy>elgui</createdBy>
+<createdTime>2022-09-12 03:11:45 UTC</createdTime>
+<ownerDesignName>BDdatamodeler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

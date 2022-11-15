@@ -1,0 +1,40 @@
+<ion-header class="bg ion-no-border">
+  <ion-back-button class="bg2" style="position: absolute; margin-top:20px;"></ion-back-button>
+</ion-header>
+
+<ion-content class="bg">
+
+  <h1 style="margin-top: 30px;" class="centrado bg2">Editar Perfil</h1>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" class="centrado">
+        <img [src]='imagentomada?.webPath' />
+        <ion-button expand="full" shape="round" (click)="TomarFoto()">
+          <ion-icon name="pencil-sharp"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+          <ion-item class="bg2 bg">
+            <ion-label position="stacked">Nombre:</ion-label>
+            <ion-input placeholder=""></ion-input>
+          </ion-item>
+          <ion-item class="bg2 bg" style="margin-top: 15px;">
+            <ion-label position="stacked">Telefono: </ion-label>
+            <ion-input placeholder=""></ion-input>
+          </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-item class="bg2 bg" style="margin-top: 15px;">
+        <ion-label position="stacked">Correo: </ion-label>
+        <ion-input placeholder=""></ion-input>
+      </ion-item>
+  </ion-grid>
+
+
+  <div class="centrado">
+    <ion-button (click)="presentAlert()" class="color color2" vertical="bottom" [routerLink]="['/perfil']">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+</ion-content>

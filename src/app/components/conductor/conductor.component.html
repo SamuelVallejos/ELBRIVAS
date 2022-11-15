@@ -1,0 +1,22 @@
+<mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ vehiculos.Patente }}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{ vehiculos.MarcaVehiculo}} <br>
+                {{ vehiculos.ModeloVehiculo}} 
+                <ion-icon name="car-sport-outline"></ion-icon>
+                <!-- icono o foto -->
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-form-field appearance="fill">
+            <ion-button style="justify-content: flex-end;" [routerLink]="['/crearviaje']"> Crear Viaje </ion-button>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+        </mat-form-field>
+    </mat-expansion-panel>
+</mat-accordion>
