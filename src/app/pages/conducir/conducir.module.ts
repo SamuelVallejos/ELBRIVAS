@@ -7,8 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ConducirPageRoutingModule } from './conducir-routing.module';
 
 import { ConducirPage } from './conducir.page';
-import { ConductorComponent } from 'src/app/components/conductor/conductor.component';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   imports: [
@@ -20,4 +19,4 @@ import {MatExpansionModule} from '@angular/material/expansion';
   ],
   declarations: [ConducirPage]
 })
-export class ConducirPageModule {}
+export class ConducirPageModule { }

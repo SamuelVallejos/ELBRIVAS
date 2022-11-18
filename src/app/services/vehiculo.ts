@@ -4,4 +4,5 @@ export class Vehiculo {
     modelo: String;
     color: String;
     annio: number;
+    id: number;
 }

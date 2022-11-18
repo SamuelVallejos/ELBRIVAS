@@ -8,24 +8,9 @@ import { Router } from '@angular/router';
 })
 export class ViajePage implements OnInit {
 
-  
-  autos: any = [
-    {
-      Chofer: 'JUAN CARLOS',
-      MarcaVehiculo: 'TOYOTA',
-      ModeloVehiculo: 'TERCEL',
-      Patente: 'FR-YQ-23',
-      ColorVehiculo: 'NEGRO',
-      Destino: 'COLINA',
-      Asientos: 1,
-      Tarifa: 1100
-    }
-  ]
-
   constructor(private router: Router) {
   }
 
- 
   ViajeClick() {
     this.router.navigate(['home/viaje']);
   }

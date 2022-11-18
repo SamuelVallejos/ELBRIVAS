@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { retry, catchError } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { retry } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,28 +14,19 @@ export class ApiService {
     })
   }
 
-  apiURLuser = 'https://my-json-server.typicode.com/victorrosendo/repoUsuariosRamos/users';
-  apiURLvehiculo = 'https://my-json-server.typicode.com/victorrosendo/repoListadoAutos/autos';
+  apiURLuser = 'https://my-json-server.typicode.com/victorrosendo/repoUsuariosRamos';
+  apiURLvehiculo = 'https://my-json-server.typicode.com/victorrosendo/repoListadoAutos';
 
-
-
-  //Get con filtro
-  //getPost(id): Observable<any> {
-    //return this.http.get(this.apiURL + '/posts/' + id).pipe(
-      //retry(3)
-    //);
-  //}
-  
   constructor(private http: HttpClient) { }
   
   getPostsuser(): Observable<any> {
-    return this.http.get(this.apiURLuser).pipe(
+    return this.http.get(this.apiURLuser+'/users/').pipe(
       retry(3)
     );
   }
 
   getPostsvehiculo(): Observable<any> {
-    return this.http.get(this.apiURLvehiculo).pipe(
+    return this.http.get(this.apiURLvehiculo+'/autos/').pipe(
       retry(3)
     );
   }

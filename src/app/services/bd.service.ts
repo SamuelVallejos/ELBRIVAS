@@ -20,14 +20,14 @@ export class BdService {
   }
 
   // Create Table
-  usuarioD: string = "CREATE TABLE IF NOT EXISTS usuario(id_usuario INTEGER PRIMARY KEY autoincrement,nombre VARCHAR(100) NOT NULL, correo VARCHAR(100), contrasena varchar(16) NOT NULL, telefono NUMBER,id_rol INTEGER NOT NULL)"
-  autoD: string = "CREATE TABLE IF NOT EXISTS vehiculo(patente INTEGER PRIMARY KEY, marca VARCHAR(20) NOT NULL, modelo VARCHAR(20), color VARCHAR(20), annio NUMBER,FOREIGN KEY(usuario_id_usuario) REFERENCES usuario(id_usuario))"
+  usuarioD: string = "CREATE TABLE IF NOT EXISTS usuario(id_usuario INTEGER PRIMARY KEY autoincrement,nombre VARCHAR(100) NOT NULL, correo VARCHAR(100), contrasena varchar(16) NOT NULL, telefono NUMBER,id_rol INTEGER)"
+  autoD: string = "CREATE TABLE IF NOT EXISTS vehiculo(patente INTEGER PRIMARY KEY,marca VARCHAR(20) NOT NULL, modelo VARCHAR(20), color VARCHAR(20), annio NUMBER,FOREIGN KEY(usuario_id_usuario) REFERENCES usuario(id_usuario))"
   //viajeD: string = "CREATE TABLE IF NOT EXISTS viaje(id_viaje INTEGER PRIMARY KEY autoincrement,fecha_viaje VARCHAR(10) NOT NULL, hora_salida VARCHAR(20) NOT NULL, asientos_disponibles number NOT NULL, monto NUMBER NOT NULL, sede VARCHAR(30) NOT NULL, recorrido VARCHAR(30) NOT NULL,FOREIGN KEY(vehiculo_patente) REFERENCES vehiculo(patente))"
   //DViajeD: string = "CREATE TABLE IF NOT EXISTS detalle_viaje(id_detalle INTEGER PRIMARY KEY autoincrement,status VARCHAR(100), FOREIGN KEY(usuario_id_usuario) REFERENCES usuario(id_usuario),FOREIGN KEY(viaje_id_viaje) REFERENCES viaje(id_viaje))"
 
   // Instert IntosregistroVehiculo
-  registroVehiculo: string = "INSERT or IGNORE INTO usuario(id_vehiculo ,patente, marca, modelo, color, annio) VALUES (0, SASD11,drivolo,j3,rosao,1943);";
-  registroUsuario: string = "INSERT or IGNORE INTO vehiculo(id_usuario,correo,contrasena,telefono) VALUES (0,sad@dsa.cl,dsasadsa,34783478);";
+  registroVehiculo: string = "INSERT or IGNORE INTO usuario(patente, marca, modelo, color, annio) VALUES ('','',tercel,azul,1943);";
+  registroUsuario: string = "INSERT or IGNORE INTO vehiculo(id_usuario,nombre,correo,contrasena,telefono, id_rol) VALUES ('','',sad@dsa.cl,'',124);";
   //registroViaje: string = "INSERT or IGNORE INTO viaje(id_viaje,fecha_viaje, hora_salida, asientos_disponibles, monto, sede, recorrido) VALUES (0,123,);";
   //registroDviajeD: string = "INSERT or IGNORE INTO viaje() VALUES ();";
   // 
@@ -51,11 +51,9 @@ export class BdService {
   }
 
   crearBD() {
-    //verificamos que la plataforma este lista
     this.platform.ready().then(() => {
-      //creamos la BD
       this.sqlite.create({
-        name: 'bdusuario.db',
+        name: 'bdusuario1.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
         this.database = db;
@@ -64,21 +62,22 @@ export class BdService {
       }).catch(e => {
         this.presentAlert("Error creación la BD: " + e);
       })
+      return 
     })
   }
 
   async crearTablas() {
     try {
       //ejecuto creacion de tablas
-      await this.database.executeSql(this.usuarioD, []);
-      await this.database.executeSql(this.autoD, []);
+      await this.database.executeSql(this.usuarioD,[]);
+      await this.database.executeSql(this.autoD,[]);
       //await this.database.executeSql(this.DViajeD, []);
       //await this.database.executeSql(this.DViajeD, []);
 
 
       //ejecuto los insert
-      await this.database.executeSql(this.registroUsuario, []);
-      await this.database.executeSql(this.registroVehiculo, []);
+      await this.database.executeSql(this.registroUsuario,[]);
+      await this.database.executeSql(this.registroVehiculo,[]);
       //await this.database.executeSql(this.registroViaje, []);
       //await this.database.executeSql(this.registroDviajeD, []);
 
@@ -123,9 +122,9 @@ export class BdService {
     })
   }
 
-  registrarUsuario(nombre, correo, contraseña, telefono, id_rol) {
-    let data = [nombre, correo, contraseña, telefono];
-    return this.database.executeSql('INSERT INTO usuario(nombre, correo,contraseña,telefono,id_rol) VALUES (?,?,?,?,?)', data).then(data2 => {
+  registrarUsuario(id, nombre, correo, contrasena, telefono, id_rol) {
+    let data = [id, nombre, correo, contrasena, telefono, id_rol];
+    return this.database.executeSql('INSERT INTO usuario(id, nombre, correo,contraseña,telefono,id_rol) VALUES (?,?,?,?,?,?)', data).then(data2 => {
       this.buscarUsuario();
       this.presentAlert("Registro del Usuario Realizado");
     })
@@ -162,18 +161,18 @@ export class BdService {
             marca: res.rows.item(i).marca,
             modelo: res.rows.item(i).modelo,
             color: res.rows.item(i).color,
-            annio: res.rows.item(i).annio
+            annio: res.rows.item(i).annio,
+            id: res.rows.item(i).id_usuario
           })
         }
       }
       this.listaVehiculo.next(items);
-
     })
   }
 
-  registrarVehiculo(patente, marca, modelo, color, annio) {
-    let data = [patente, marca, modelo, color, annio];
-    return this.database.executeSql('INSERT INTO vehiculo(patente,marca,modelo,color,annio) VALUES (?,?,?,?,?)', data).then(data2 => {
+  registrarVehiculo(patente, marca, modelo, color, annio, id_usuario) {
+    let data = [patente, marca, modelo, color, annio, id_usuario];
+    return this.database.executeSql('INSERT INTO vehiculo(patente,marca,modelo,color,annio,id_usuario) VALUES (?,?,?,?,?,?)', data).then(data2 => {
       this.buscarVehiculo();
       this.presentAlert("Registro del Vehiculo Realizado");
     })
