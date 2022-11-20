@@ -13,7 +13,7 @@ import { MisvehiculosPage } from './misvehiculos.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MisvehiculosPageRoutingModule
+    MisvehiculosPageRoutingModule,
   ],
   declarations: [MisvehiculosPage]
 })

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ViajePageRoutingModule } from './viaje-routing.module';
 import { ViajePage } from './viaje.page';
 import { HomePage } from 'src/app/home/home.page';
+import { ViajecComponent } from 'src/app/components/viajec/viajec.component';
 
 
 @NgModule({
@@ -16,6 +17,6 @@ import { HomePage } from 'src/app/home/home.page';
     IonicModule,
     ViajePageRoutingModule
   ],
-  declarations: [ViajePage, HomePage],
+  declarations: [ViajePage, HomePage, ViajecComponent],
 })
 export class ViajePageModule { }

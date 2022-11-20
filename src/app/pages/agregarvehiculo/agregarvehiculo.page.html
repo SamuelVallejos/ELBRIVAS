@@ -12,31 +12,31 @@
   <form [formGroup]="FormularioNewCar" (ngSubmit)="submitForm()">
     <ion-item class="bg bg2">
       <ion-label position="floating">Patente Vehiculo</ion-label>
-      <ion-input type="text" formControlName="patente" name="patente"></ion-input>
+      <ion-input type="text" formControlName="patente" [(ngModel)]="patente" name="patente"></ion-input>
     </ion-item>
     <ion-item class="bg bg2">
       <ion-label position="floating">Marca Vehiculo</ion-label>
-      <ion-input type="text" formControlName="marca" name="marca"></ion-input>
+      <ion-input type="text" formControlName="marca" [(ngModel)]="marca" name="marca"></ion-input>
     </ion-item>
     <ion-item class="bg bg2">
       <ion-label position="floating">Modelo Vehiculo</ion-label>
-      <ion-input type="text" formControlName="modelo" name="modelo"></ion-input>
+      <ion-input type="text" formControlName="modelo" [(ngModel)]="modelo" name="modelo"></ion-input>
     </ion-item>
     <ion-item class="bg bg2">
       <ion-label position="floating">Año Vehiculo</ion-label>
-      <ion-input type="text" formControlName="ano" name="annio"></ion-input>
+      <ion-input type="text" formControlName="ano" [(ngModel)]="ano" name="annio"></ion-input>
     </ion-item>
     <ion-item class="bg bg2">
       <ion-label position="floating">Color Vehiculo</ion-label>
-      <ion-input type="text" formControlName="color" name="color"></ion-input>
+      <ion-input type="text" formControlName="color" [(ngModel)]="color" name="color"></ion-input>
     </ion-item>
 
-  <ion-row>
-    <ion-col class="centrado">
-      <ion-button (click)="presentAlert()" type="submit" class="centrado bg3 bg4">
-        Confirmar</ion-button>
-    </ion-col>
-  </ion-row>  
-</form>
+    <ion-row>
+      <ion-col class="centrado">
+        <ion-button (click)="submitForm()" type="submit" class="centrado bg3 bg4">
+          Confirmar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 
 </ion-content>

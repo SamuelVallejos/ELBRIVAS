@@ -4,36 +4,32 @@
       <ion-back-button class="bg2" style="position: absolute;"></ion-back-button>
     </ion-buttons>
     <div class="centrado">
-    <ion-icon name="person-circle-outline" class="bg2 iconsize"></ion-icon></div>
+      <ion-icon name="person-circle-outline" class="bg2 iconsize"></ion-icon>
+    </div>
     <h1 class="bg2 centrado">Perfil</h1>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="bg">
 
-  <ion-item-sliding *ngFor="let z of usuario">
+  <ion-item *ngFor="let u of usuario">
 
-  <ion-grid class="bg3 bg2">
-    <ion-row>
-      <ion-col size="6">  
-      
-      </ion-col>
-      <ion-col size="6">
-        <ion-row>
-          <ion-text class="bg2">Nombre: {{ z.nombre }}</ion-text>
-        </ion-row>
-        <ion-row>
-          <ion-text style="margin-top: 35px;" class="bg2">Telefono: </ion-text>
-        </ion-row>
-      </ion-col>
-      <ion-text style="margin-top: 15px; margin-left:40px;" class="bg2">Correo: </ion-text>
-    </ion-row>
-  </ion-grid>
+    <ion-grid class="bg3 bg2">
+      <ion-row>
+        <ion-text class="bg2">Nombre: {{ u.nombre }}</ion-text>
+      </ion-row>
+      <ion-row>
+        <ion-text class="bg2">id_rol: {{ u.id_rol }}</ion-text>
+      </ion-row>
+      <ion-row>
+        <ion-text class="bg2">contra: {{ u.clave }}</ion-text>
+      </ion-row>
+      <ion-row>
+        <ion-text class="bg2">id: {{ u.id }} </ion-text>
+      </ion-row>
+    </ion-grid>
 
-  </ion-item-sliding>
-
-
-
+  </ion-item>
 
   <div class="centrado">
     <ion-button class="color color2" shape="round" [routerLink]="['/editarperfil']">

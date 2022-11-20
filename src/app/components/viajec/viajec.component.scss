@@ -1,0 +1,34 @@
+.bg{
+    --ion-background-color: #1a1d52 ;
+    --background: #1a1d52;
+  }
+  .bg2{
+    color: #21d6a0;
+  }
+  .bg3{
+    --ion-background-color: #21d6a0 ;
+    --background: #21d6a0;
+  }
+  .bg4{
+    color: #1a1d52;
+    text-transform: capitalize;
+  }
+  .centrado{
+      text-align: center;
+  }
+  
+  .arrow{
+      position:absolute;
+      margin-left: 20px;
+      width: 30px;
+      height: 100px;
+  }
+  .hamburger{
+    --background: #1a1d52;
+  }
+  .car{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+  }

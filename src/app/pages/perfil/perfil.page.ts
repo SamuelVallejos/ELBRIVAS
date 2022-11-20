@@ -7,12 +7,11 @@ import { BdService } from 'src/app/services/bd.service';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
+
   usuario: any = [{
     id: '',
     nombre: '',
-    correo: '',
     contrasena: '',
-    telefono: '',
     id_rol: ''
   }]
 
@@ -20,7 +19,6 @@ export class PerfilPage implements OnInit {
   }
 
   ngOnInit() {
-
     this.DBC.dbState().subscribe((res) => {
       if (res) {
         this.DBC.fetchUsuario().subscribe((item) => {

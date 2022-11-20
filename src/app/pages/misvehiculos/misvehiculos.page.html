@@ -9,28 +9,43 @@
 
 <ion-content class="bg">
 
-  <ion-item-sliding *ngFor="let z of automovil">
-    <ion-card class="bg3 bg4">
-      <ion-row>
-        <ion-col size="8">
-          <ion-row>
-            <ion-col>
-              Patente: {{ z.patente }}
-            </ion-col>
-          </ion-row>
+    <ion-col size="12">
+      <ion-card class="bg3 bg4" *ngFor="let v of misVehiculos">
 
-          <ion-row>
-            <ion-col>
-              Marca Vehiculo: {{ z.marca }}
-            </ion-col>
-          </ion-row>
-        </ion-col>
-        <ion-col size="4">
-          <ion-icon name="car-sport-outline" class="iconsize"></ion-icon>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-  </ion-item-sliding>
+        <ion-row>
+          <ion-col>
+            Patente Vehiculo: {{ v.patente }}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            Marca Vehiculo: {{ v.marca }}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            Modelo Vehiculo: {{ v.modelo }}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            Color Vehiculo: {{ v.color }}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            Año Vehiculo: {{ v.annio }}
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+    </ion-col>
+
+
   <div class="centrado">
     <ion-button class="color color2" shape="round" [routerLink]="['/agregarvehiculo']">
       <ion-icon name="add-outline"></ion-icon>

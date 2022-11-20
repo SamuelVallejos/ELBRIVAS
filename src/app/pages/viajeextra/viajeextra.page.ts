@@ -55,26 +55,6 @@ export class ViajeextraPage implements OnInit {
       },
 
     });
-    this.marcadores();
-  }
-
-  async marcadores() {
-    const marcadores1: Marker[] = [
-      {
-        coordinate: {
-          lat: -33.45694,
-          lng: -70.64827
-        },
-        title: 'Comienzo de viaje'
-      },
-      {
-        coordinate: {
-          lat: -33.47694,
-          lng: -70.94827
-        },
-        title: 'Fin del viaje'
-      }];
-    await this.map.addMarkers(marcadores1);
   }
 
   ngOnInit() {
