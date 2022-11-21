@@ -16,7 +16,7 @@ import { AlertController } from '@ionic/angular';
   async presentAlert() {
     const alert = await this.alertController.create({
       subHeader: 'Asiento reservado',
-      buttons: ['Confirmar'],
+      buttons: ['Confirmar']
     });
 
     await alert.present();
@@ -29,7 +29,3 @@ import { AlertController } from '@ionic/angular';
   ngOnInit() {}
   
 }
-
- 
-
-

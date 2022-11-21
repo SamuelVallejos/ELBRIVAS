@@ -43,7 +43,7 @@ export class BdService {
   crearBD() {
     this.platform.ready().then(() => {
       this.sqlite.create({
-        name: 'bdusuario340.db',
+        name: 'bdusuario342.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
         this.database = db;

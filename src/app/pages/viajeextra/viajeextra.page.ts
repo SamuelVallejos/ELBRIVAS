@@ -48,13 +48,19 @@ export class ViajeextraPage implements OnInit {
       forceCreate: true,
       config: {
         center: {
-          lat: -33.45694,
-          lng: -70.64827,
+          lat: this.geoData1,
+          lng: this.geoData2,
         },
         zoom: 10,
       },
 
     });
+    this.geolocation.getCurrentPosition().then((geposition: Geoposition) => {
+      this.geoData1 = geposition.coords.latitude;
+      this.geoData2 = geposition.coords.longitude;
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    })
   }
 
   ngOnInit() {

@@ -45,6 +45,7 @@
     "cordova-plugin-geolocation": "^4.1.0",
     "cordova-plugin-nativestorage": "^2.3.2",
     "cordova-sqlite-storage": "^6.0.0",
+    "jasmine": "^4.5.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
