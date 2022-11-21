@@ -20,14 +20,9 @@ export class BdService {
   }
 
   // Create Table
-  usuarioD: string = "CREATE TABLE IF NOT EXISTS usuario(id_usuario INTEGER PRIMARY KEY autoincrement,nombre VARCHAR(100) NOT NULL, clave varchar(16) NOT NULL,id_rol INTEGER)"
+  usuarioD: string = "CREATE TABLE IF NOT EXISTS usuario(id_usuario INTEGER PRIMARY KEY autoincrement,nombre VARCHAR(100),clave varchar(16),id_rol INTEGER)"
   autoD: string = "CREATE TABLE IF NOT EXISTS vehiculo(patente NUMBER PRIMARY KEY,marca VARCHAR(20) NOT NULL, id_usuario VARCHAR(20))"
-  // viajeD: string = "CREATE TABLE IF NOT EXISTS viaje(id_viaje INTEGER PRIMARY KEY autoincrement,fecha_viaje VARCHAR(10) NOT NULL, hora_salida VARCHAR(20) NOT NULL, asientos_disponibles number NOT NULL, monto NUMBER NOT NULL, sede VARCHAR(30) NOT NULL, recorrido VARCHAR(100) NOT NULL)"
-
-  // Instert Intos
-  // registroUsuario: string = "INSERT or IGNORE INTO usuario(id_usuario,nombre,contrasena, id_rol) VALUES (5,zak,sad@dsa.cl,tumamaesminana,124);";
-  // registroVehiculo: string = "INSERT or IGNORE INTO vehiculo(patente, marca, modelo, color, annio) VALUES (142536,toyota,tercel,azul,1943);";
-  // registroViaje: string = "INSERT or IGNORE INTO viaje(id_viaje,fecha_viaje, hora_salida, asientos_disponibles, monto, sede, recorrido) VALUES (2,12/11, 1400, 4, 1500, Sede Plaza Norte, paso por tal parte);";
+  // viajeD: string = "CREATE TABLE IF NOT EXISTS viaje(id_viaje INTEGER PRIMARY KEY autoincrement,fecha_viaje VARCHAR(10),hora_salida VARCHAR(20),asientos_disponibles number,monto NUMBER,sede VARCHAR(30),recorrido VARCHAR(100))"
 
   public database: SQLiteObject;
 
@@ -48,7 +43,7 @@ export class BdService {
   crearBD() {
     this.platform.ready().then(() => {
       this.sqlite.create({
-        name: 'bdusuario324.db',
+        name: 'bdusuario340.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
         this.database = db;
@@ -67,15 +62,7 @@ export class BdService {
       //ejecuto creacion de tablas
       await this.database.executeSql(this.usuarioD, []);
       await this.database.executeSql(this.autoD, []);
-      //await this.database.executeSql(this.DViajeD, []);
-      //await this.database.executeSql(this.DViajeD, []);
-
-
-      //ejecuto los insert
-      //await this.database.executeSql(this.registroUsuario, []);
-      //await this.database.executeSql(this.registroVehiculo, []);
-      //await this.database.executeSql(this.registroViaje, []);
-      //await this.database.executeSql(this.registroDviajeD, []);
+      // await this.database.executeSql(this.ViajeD, []);
 
       //llamo al observable de carga de datos
       this.buscarUsuario();
@@ -115,9 +102,9 @@ export class BdService {
     })
   }
 
-  registrarUsuario(id, nombre, contrasena, rol) {
-    let data = [id, nombre, contrasena, rol];
-    return this.database.executeSql('INSERT INTO usuario(id, nombre, contraseña, id_rol) VALUES (?,?,?,?,?)', data).then(data2 => {
+  registrarUsuario(id, nombre, contrasena, idr) {
+    let data = [id, nombre, contrasena, idr];
+    return this.database.executeSql('INSERT INTO usuario(id_usuario, nombre, clave, id_rol) VALUES (?,?,?,?)', data).then(data2 => {
       this.buscarUsuario();
       this.presentAlert("Registro del Usuario Realizado");
     })
@@ -160,8 +147,8 @@ export class BdService {
     })
   }
 
-  registrarVehiculo(patente, marca,id_usuario  ) {
-    let data = [patente, marca,id_usuario ];
+  registrarVehiculo(patente, marca, id_usuario) {
+    let data = [patente, marca, id_usuario];
     return this.database.executeSql('INSERT INTO vehiculo(patente,marca,id_usuario) VALUES (?,?,?)', data).then(data2 => {
       this.buscarVehiculo();
       this.presentAlert("Registro del Vehiculo Realizado");
@@ -174,7 +161,6 @@ export class BdService {
       this.presentAlert("Vehiculo Eliminado");
     })
   }
-
 
   // viaje
 

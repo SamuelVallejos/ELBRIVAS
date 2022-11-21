@@ -11,9 +11,7 @@ export class MisvehiculosPage implements OnInit {
   misVehiculos: any = [{
     patente: "",
     marca: "",
-    modelo: "",
-    color: "",
-    annio: ""
+    id_usuario: ""
   }]
 
   constructor(
@@ -21,7 +19,6 @@ export class MisvehiculosPage implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.bd.dbState().subscribe((res) => {
       if (res) {
         this.bd.fetchVehiculo().subscribe((item) => {
@@ -29,5 +26,10 @@ export class MisvehiculosPage implements OnInit {
         })
       }
     })
+  }
+
+  eliminar(v) {
+    this.bd.eliminarVehiculo(v.patente);
+    this.bd.presentAlert("Vehiculo Eliminado");
   }
 }

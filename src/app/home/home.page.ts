@@ -11,17 +11,17 @@ import { BdService } from '../services/bd.service';
 })
 export class HomePage implements OnInit {
 
-  usuario: any []= [{
+  usuario: any[] = [{
     id: '',
     nombre: '',
     clave: '',
     id_rol: ''
   }]
 
-  vehiculo: any []= [{
+  vehiculo: any[] = [{
     patente: '',
     marca: '',
-    id_usuario: '',
+    id_usuario: ''
   }]
 
   constructor(
@@ -37,9 +37,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.api.getPostsuser().subscribe((res) => {
       this.usuario = res;
-      //console.log(res)
       for (let u of this.usuario) {
-        //this.servicioBD.presentAlert(x.nombre);
         this.bd.registrarUsuario(u.id, u.nombre, u.clave, u.id_rol);
       }
     });
