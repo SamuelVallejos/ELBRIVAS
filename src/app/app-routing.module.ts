@@ -6,7 +6,8 @@ import { AutoLoginGuard } from './guards/auto-login.guard';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+    canLoad: [AuthGuard]
   },
   {
     path: '',

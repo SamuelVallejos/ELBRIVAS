@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, from, Observable, Subject } from 'rxjs';
-import { Storage } from '@capacitor/storage';
+import { Preferences } from '@capacitor/preferences';
 
-const TOKEN_KEY = 'my-token';
-  
+const TOKEN_KEY = 'my-token'
+
 @Injectable({
 	providedIn: 'root'
 })
+
 export class AuthenticationService {
-	// Init with null to filter out the first value in a guard!
 	isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
 	token = '';
 
@@ -19,7 +19,7 @@ export class AuthenticationService {
 	}
 
 	async loadToken() {
-		const token = await Storage.get({ key: TOKEN_KEY });
+		const token = await Preferences.get({ key: TOKEN_KEY });
 		if (token && token.value) {
 			console.log('set token: ', token.value);
 			this.token = token.value;
@@ -29,11 +29,11 @@ export class AuthenticationService {
 		}
 	}
 
-	login(credentials: { email; password }): Observable<any> {
-		return this.http.post(`https://reqres.in/api/login`, credentials).pipe(
+	login(credentials: { nombre; clave }): Observable<any> {
+		return this.http.post(`https://my-json-server.typicode.com/victorrosendo/repoUsuariosRamos/users`, credentials).pipe(
 			map((data: any) => data.token),
 			switchMap((token) => {
-				return from(Storage.set({ key: TOKEN_KEY, value: token }));
+				return from(Preferences.set({ key: TOKEN_KEY, value: token }));
 			}),
 			tap((_) => {
 				this.isAuthenticated.next(true);
@@ -43,6 +43,6 @@ export class AuthenticationService {
 
 	logout(): Promise<void> {
 		this.isAuthenticated.next(false);
-		return Storage.remove({ key: TOKEN_KEY });
+		return Preferences.remove({ key: TOKEN_KEY });
 	}
 }

@@ -1,43 +1,44 @@
 <ion-content class="bg">
 
-  <h1 class="centrado bg2" style="padding-top: 50px;"  id="titlelogin">Iniciar Sesión</h1>
+  <h1 class="centrado bg2" style="padding-top: 50px;" id="titlelogin">Iniciar Sesión</h1>
   <ion-img src="assets/icon/drivolo.png" class="logoAjustado"></ion-img>
 
-<ion-row class="bg bg2 centrado">
-  <ion-col size="12">
-      <mat-form-field appearance="standard">
-        <mat-label class="bg2">Usuario</mat-label>
-        <input matInput placeholder="Coloca tu nombre de Usuario" [formControl]="email" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        <mat-icon matSuffix></mat-icon>
-      </mat-form-field>
-    </ion-col> 
-      <ion-col size="12" class="bg2">
-        <mat-form-field appearance="standard">
-          <mat-label class="bg2">Contraseña</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide" style="background-color:#1a1d52">
-            <mat-icon class="bg2">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-        </mat-form-field>
-    </ion-col>
-  </ion-row>
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+    <div class="input-group">
+      <ion-item>
+        <ion-input placeholder="Usuario" formControlName="nombre"></ion-input>
+      </ion-item>
+      <div *ngIf="(nombre.dirty || nombre.touched) && nombre.errors" class="errors">
+        <span *ngIf="nombre.errors?.required">Usuario Requerido</span>
+        <span *ngIf="nombre.errors?.nombre">Usuario Invalido</span>
+      </div>
+      <ion-item>
+        <ion-input type="password" placeholder="contraseña" formControlName="clave"></ion-input>
+      </ion-item>
+      <div *ngIf="(clave.dirty || clave.touched) && clave.errors" class="errors">
+        <span *ngIf="clave.errors?.required">Contraseña Requerida</span>
+        <span *ngIf="clave.errors?.minlength">La contraseña nesecita ser de minimo 6 caracteres</span>
+      </div>
+    </div>
 
+    <ion-button type="submit" expand="block">Aceptar</ion-button>
 
-<div class="centrado">
-<button class="bg2" style="background-color:#1a1d52;" [routerLink]="['/rcontrasena']"> ¿Olvidaste tu
-  contraseña?</button>
-</div>
+  </form>
+
+  <div class="centrado">
+    <button class="bg2" style="background-color:#1a1d52;" [routerLink]="['/rcontrasena']"> ¿Olvidaste tu
+      contraseña?</button>
+  </div>
 
   <ion-grid class="bg">
     <ion-row class="bg">
       <ion-col size="2"></ion-col>
       <ion-col style="text-align: center;">
-        <ion-button type="submit" class="color2 color" [routerLink]="['/home']" id="ide">Aceptar</ion-button>
-        <div class="centrado" >
-          <button class="bg2" style="background-color:#1a1d52;margin-top:15px" [routerLink]="['/registro']"> Registrarse </button>
-          </div>
+        <ion-button type="submit" class="color2 color" [routerLink]="['/']" id="ide">Aceptar</ion-button>
+        <div class="centrado">
+          <button class="bg2" style="background-color:#1a1d52;margin-top:15px" [routerLink]="['/registro']"> Registrarse
+          </button>
+        </div>
       </ion-col>
       <ion-col size="2"></ion-col>
     </ion-row>
