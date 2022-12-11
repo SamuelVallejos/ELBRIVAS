@@ -9,9 +9,11 @@
 
 <ion-content class="bg">
 
+  <form [formGroup]="FormularioViaje" (ngSubmit)="submitForm()">
+
   <ion-list class="fondo">
     <ion-item class="bg bg2">
-      <ion-select placeholder="Inicio Viaje">
+      <ion-select formControlName="sede_viaje" placeholder="Inicio Viaje">
         <ion-select-option style="--ion-background-color:#ffff !important" *ngFor="let s of sedes"
           value="sede_{{ s.sede }}">
           {{ s.sede }}
@@ -19,7 +21,7 @@
       </ion-select>
     </ion-item>
     <ion-item class="bg bg2">
-      <ion-select placeholder="Destino Viaje">
+      <ion-select formControlName="comunas_viaje" placeholder="Destino Viaje">
         <ion-select-option class="colorAlerta" *ngFor="let c of comunas" value="comuna_{{ c.comuna }}">
           {{ c.comuna }}
         </ion-select-option>
@@ -27,25 +29,25 @@
     </ion-item>
   </ion-list>
 
-  <form [formGroup]="FormularioViaje" (ngSubmit)="submitForm()">
-    <ion-item class="bg bg2">
-      <ion-label position="stacked"></ion-label>
-      <ion-input formControlName="asientos" placeholder="Asientos Disponibles"></ion-input>
-    </ion-item>
-    <ion-item class="bg bg2">
-      <ion-label position="stacked"></ion-label>
-      <ion-input placeholder="ejemplo 14:30" formControlName="horaSalida" placeholder="Hora de Salida"></ion-input>
-    </ion-item>
-    <ion-item class="bg bg2">
-      <ion-label position="stacked"></ion-label>
-      <ion-input formControlName="tarifa" placeholder="Tarifa"></ion-input>
-    </ion-item>
+  <ion-item class="bg bg2">
+    <ion-label position="stacked"></ion-label>
+    <ion-input formControlName="asientos" placeholder="Asientos Disponibles"></ion-input>
+  </ion-item>
+  <ion-item class="bg bg2">
+    <ion-label position="stacked"></ion-label>
+    <ion-input formControlName="horaSalida" placeholder="Hora de Salida Ejemplo: '1430'"></ion-input>
+  </ion-item>
+  <ion-item class="bg bg2">
+    <ion-label position="stacked"></ion-label>
+    <ion-input formControlName="tarifa" placeholder="Tarifa"></ion-input>
+  </ion-item>
 
-    <h1 class="centrado">
-      <ion-button type="submit" (click)="submitForm()">Confirmar Datos
-        <ion-icon name="checkmark-circle-outline"></ion-icon>
-      </ion-button>
-    </h1>
+  <h1 class="centrado">
+    <ion-button type="submit" (click)="submitForm()">Confirmar Datos
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+    </ion-button>
+  </h1>
+
   </form>
 
 </ion-content>

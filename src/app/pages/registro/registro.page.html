@@ -24,7 +24,7 @@
       <ion-label position="floating">Repetir Contraseña</ion-label>
       <ion-input type="password" name="contrasena2" formControlName="contrasena2"></ion-input>
       <div *ngIf="FormularioUsuario.controls.contrasena2.errors?.mustMatch && FormularioUsuario.controls.contrasena2.dirty">
-        Passwords must match!
+        Las contraseñas no coinciden, porfavor intentar otra vez
       </div>
       <!-- <div *ngIf="f.contrasena2.errors.requered">Confirma tu contraseña</div>
         <div *ngIf="f.contrasena2.errors.MustMatch">Las contraseña no son las mismas</div> -->

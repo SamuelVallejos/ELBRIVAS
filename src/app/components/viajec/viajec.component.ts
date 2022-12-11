@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { BdService } from 'src/app/services/bd.service';
 
 @Component({
   selector: 'app-viajec',
@@ -11,7 +12,10 @@ import { AlertController } from '@ionic/angular';
 
   @Input() texto:any;
 
-  constructor(private router: Router,private alertController: AlertController){
+  constructor(
+    private router: Router,
+    private alertController: AlertController,
+    private bd: BdService){
   }
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -22,10 +26,9 @@ import { AlertController } from '@ionic/angular';
     await alert.present();
   }
   
-
   async A() {
     this.router.navigate(['/viajeextra']);
   }
+
   ngOnInit() {}
-  
 }

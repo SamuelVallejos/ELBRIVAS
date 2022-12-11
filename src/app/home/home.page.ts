@@ -24,6 +24,14 @@ export class HomePage implements OnInit {
     id_usuario: ''
   }]
 
+  viaje: any[] = [{
+    hora_salida: '',
+    asientos_disponibles: '',
+    monto: '',
+    sede_viaje: '',
+    comunas_viaje: ''
+  }]
+
   constructor(
     private router: Router,
     private menu: MenuController,

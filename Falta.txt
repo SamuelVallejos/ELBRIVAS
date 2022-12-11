@@ -3,6 +3,9 @@ WIP
     Contraseña min-max 6 - 15
     mensajes de falta algo
 
+
+login
+    Hacer que al logearse con un usuario se iguale una variable al id del usuario esto para ocuparlo con los select que muestren los datos en los html
 pages
     crear viaje
     editar perfil

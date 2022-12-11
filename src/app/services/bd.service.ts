@@ -20,9 +20,12 @@ export class BdService {
   }
 
   // Create Table
-  usuarioD: string = "CREATE TABLE IF NOT EXISTS usuario(id_usuario INTEGER PRIMARY KEY autoincrement,nombre VARCHAR(100),clave varchar(16),id_rol INTEGER)"
-  autoD: string = "CREATE TABLE IF NOT EXISTS vehiculo(patente NUMBER PRIMARY KEY,marca VARCHAR(20) NOT NULL, id_usuario VARCHAR(20))"
-  // viajeD: string = "CREATE TABLE IF NOT EXISTS viaje(id_viaje INTEGER PRIMARY KEY autoincrement,fecha_viaje VARCHAR(10),hora_salida VARCHAR(20),asientos_disponibles number,monto NUMBER,sede VARCHAR(30),recorrido VARCHAR(100))"
+  usuarioD: string = "CREATE TABLE IF NOT EXISTS usuario(id_usuario INTEGER PRIMARY KEY autoincrement,nombre VARCHAR(100),clave varchar(16),id_rol INTEGER);"
+  autoD: string = "CREATE TABLE IF NOT EXISTS vehiculo(patente NUMBER PRIMARY KEY,marca VARCHAR(20) NOT NULL, id_usuario VARCHAR(20));"
+  viajeD: string = "CREATE TABLE IF NOT EXISTS viaje(id_viaje INTEGER PRIMARY KEY autoincrement,hora_salida VARCHAR(6), asientos_disponibles number, monto NUMBER, sede_viaje VARCHAR(30), comunas_viaje VARCHAR(30));"
+
+  // intos
+  intoViaje: string = "INSERT or IGNORE INTO viaje(id_viaje, hora_salida, asientos_disponibles, monto, sede_viaje, comunas_viaje) VALUES (3,1300,4,1000,Plaza Norte,Colina);"
 
   public database: SQLiteObject;
 
@@ -43,7 +46,7 @@ export class BdService {
   crearBD() {
     this.platform.ready().then(() => {
       this.sqlite.create({
-        name: 'bdusuario342.db',
+        name: 'bdusuario346.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
         this.database = db;
@@ -55,19 +58,18 @@ export class BdService {
     })
   }
 
-
-
   async crearTablas() {
     try {
       //ejecuto creacion de tablas
       await this.database.executeSql(this.usuarioD, []);
       await this.database.executeSql(this.autoD, []);
-      // await this.database.executeSql(this.ViajeD, []);
+      await this.database.executeSql(this.viajeD, []);
 
       //llamo al observable de carga de datos
       this.buscarUsuario();
       this.buscarVehiculo();
-      // this.buscarViaje();
+      this.buscarViaje();
+
       //modificar el observable de el status de la BD
       this.isDBReady.next(true);
 
@@ -106,7 +108,7 @@ export class BdService {
     let data = [id, nombre, contrasena, idr];
     return this.database.executeSql('INSERT INTO usuario(id_usuario, nombre, clave, id_rol) VALUES (?,?,?,?)', data).then(data2 => {
       this.buscarUsuario();
-      this.presentAlert("Registro del Usuario Realizado");
+      // this.presentAlert("Registro del Usuario Realizado");
     })
   }
 
@@ -114,14 +116,14 @@ export class BdService {
     let data = [telefono, id];
     return this.database.executeSql('UPDATE usuario SET telefono = ? WHERE id_usuario = ?', data).then(data2 => {
       this.buscarUsuario();
-      this.presentAlert("Usuario Modificado");
+      // this.presentAlert("Usuario Modificado");
     })
   }
 
   eliminarUsuario(id) {
     return this.database.executeSql('DELETE FROM usuario WHERE id_usuario = ?', [id]).then(data2 => {
       this.buscarUsuario();
-      this.presentAlert("Usuario Eliminado");
+      // this.presentAlert("Usuario Eliminado");
     })
   }
 
@@ -151,70 +153,68 @@ export class BdService {
     let data = [patente, marca, id_usuario];
     return this.database.executeSql('INSERT INTO vehiculo(patente,marca,id_usuario) VALUES (?,?,?)', data).then(data2 => {
       this.buscarVehiculo();
-      this.presentAlert("Registro del Vehiculo Realizado");
+      // this.presentAlert("Registro del Vehiculo Realizado");
     })
   }
 
   eliminarVehiculo(patente) {
     return this.database.executeSql('DELETE FROM vehiculo WHERE patente = ?', [patente]).then(data2 => {
       this.buscarVehiculo();
-      this.presentAlert("Vehiculo Eliminado");
+      // this.presentAlert("Vehiculo Eliminado");
     })
   }
 
   // viaje
 
-  //   fetchViaje(): Observable<Viaje[]> {
-  //     return this.listaVehiculo.asObservable();
-  //   }
+  fetchViaje(): Observable<Viaje[]> {
+    return this.listaVehiculo.asObservable();
+  }
 
-  //   buscarViaje() {
-  //     return this.database.executeSql('SELECT * FROM viaje', []).then(res => {
-  //       let items: Viaje[] = [];
-  //       if (res.rows.length > 0) {
-  //         for (var i = 0; i < res.rows.length; i++) {
-  //           items.push({
-  //             id: res.rows.item(i).id_viaje,
-  //             fecha_viaje: res.rows.item(i).fecha_viaje,
-  //             hora_salida: res.rows.item(i).hora_salida,
-  //             asientos_disponibles: res.rows.item(i).asientos_disponibles,
-  //             monto: res.rows.item(i).monto,
-  //             sede: res.rows.item(i).sede,
-  //             recorrido: res.rows.item(i).recorrido
-  //           })
-  //         }
-  //       }
-  //       this.listaViaje.next(items);
+  buscarViaje() {
+    return this.database.executeSql('SELECT * FROM viaje', []).then(res => {
+      let items: Viaje[] = [];
+      if (res.rows.length > 0) {
+        for (var i = 0; i < res.rows.length; i++) {
+          items.push({
+            id: res.rows.item(i).id_viaje,
+            hora_salida: res.rows.item(i).hora_salida,
+            asientos_disponibles: res.rows.item(i).asientos_disponibles,
+            monto: res.rows.item(i).monto,
+            sede_viaje: res.rows.item(i).sede,
+            comunas_viaje: res.rows.item(i).comunas
+          })
+        }
+      }
+      this.listaViaje.next(items);
 
-  //     })
-  //   }
+    })
+  }
 
-  //   registrarViaje(fecha_viaje, hora_salida, asientos_disponibles, monto, recorrido) {
-  //     let data = [fecha_viaje, hora_salida, asientos_disponibles, monto, recorrido];
-  //     return this.database.executeSql('INSERT INTO viaje(fecha_viaje, hora_salida, asientos_disponibles, monto, recorrido) VALUES (?,?,?,?,?)', data).then(data2 => {
-  //       this.buscarViaje();
-  //       this.presentAlert("Registro del Viaje Realizado");
-  //     })
-  //   }
+  registrarViaje(hora_salida, asientos_disponibles, monto, sede_viaje, comunas_viaje) {
+    let data = [hora_salida, asientos_disponibles, monto, sede_viaje, comunas_viaje];
+    return this.database.executeSql('INSERT INTO viaje (hora_salida, asientos_disponibles, monto, sede_viaje, comunas_viaje) VALUES (?,?,?,?,?)', data).then(data2 => {
+      this.buscarViaje();
+      // this.presentAlert("Registro del Viaje Realizado");
+    })
+  }
 
-  //   modificarViaje(id, fecha_viaje, hora_salida, asientos_disponibles, monto, recorrido) {
-  //     let data = [fecha_viaje, hora_salida, asientos_disponibles, monto, recorrido, id];
-  //     return this.database.executeSql('UPDATE viaje SET fecha_viaje = ?, hora_salida = ?, asientos_disponibles = ?, monto = ?, recorrido = ? WHERE id_viaje = ?', data).then(data2 => {
-  //       this.buscarViaje();
-  //       this.presentAlert("Viaje Modificado");
-  //     })
-  //   }
+  modificarViaje(hora_salida, asientos_disponibles, monto, comunas_viaje) {
+    let data = [hora_salida, asientos_disponibles, monto, comunas_viaje];
+    return this.database.executeSql('UPDATE viaje SET hora_salida = ?, asientos_disponibles = ?, monto = ?,  comunas_viaje= ? WHERE id_viaje = ?', data).then(data2 => {
+      this.buscarViaje();
+      // this.presentAlert("Viaje Modificado");
+    })
+  }
 
-  //   eliminarViaje(id) {
-  //     return this.database.executeSql('DELETE FROM viaje WHERE id_viaje = ?', [id]).then(data2 => {
-  //       this.buscarViaje();
-  //       this.presentAlert("Viaje Eliminado");
-  //     })
-
+  eliminarViaje(id) {
+    return this.database.executeSql('DELETE FROM viaje WHERE id_viaje = ?', [id]).then(data2 => {
+      this.buscarViaje();
+      // this.presentAlert("Viaje Eliminado");
+    })
+  }
 
   async presentAlert(msj: string) {
     const alert = await this.alertController.create({
-      header: 'Importante',
       message: msj,
       buttons: ['OK'],
     });

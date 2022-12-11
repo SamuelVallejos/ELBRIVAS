@@ -11,12 +11,19 @@ const routes: Routes = [
     children:[
       {
         path: 'conducir',
-        component: ConducirPage
+        component: ConducirPage,
+        loadChildren: () => import('../pages/conducir/conducir.module').then((m) => m.ConducirPageModule)
       },
       {
         path: 'viaje',
-        component: ViajePage
-      }
+        component: ViajePage,
+        loadChildren: () => import('../pages/viaje/viaje.module').then((m) => m.ViajePageModule)
+      },
+      {
+				path: '',
+				redirectTo: '/pages/viaje',
+				pathMatch: 'full'
+			},
     ]
   }
 ];

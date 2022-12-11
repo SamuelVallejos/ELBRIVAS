@@ -25,7 +25,6 @@ export class ViajePage implements OnInit {
   constructor(private router: Router) {
   }
 
- 
   ViajeClick() {
     this.router.navigate(['home/viaje']);
   }

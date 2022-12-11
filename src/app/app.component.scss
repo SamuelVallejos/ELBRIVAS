@@ -4,7 +4,7 @@
 }
 
 .tm {
-  color: #ffffff;
+  color: #21d6a0;
 }
 
 .bg2 {
@@ -12,13 +12,14 @@
 }
 
 .hm {
-  --ion-background-color: #3b3b3b;
-  --background: #3c3c3c;
-  background: #3c3c3c;
+  --ion-background-color: #1a1d52;
+  --background: #1a1d52;
+  background: #1a1d52;
 }
 
 .hm2 {
-  color: #ffffff;
+  
+  color: #21d6a0;
 }
 
 .centrado {
@@ -46,4 +47,11 @@
   width: 65px;
   position: absolute;
   margin-left: 10px;
+}
+
+.burger{
+  opacity: 90%;
+}
+.burger2{
+  backdrop-filter: blur(10px);
 }
