@@ -71,7 +71,7 @@ export class EditarviajePage implements OnInit {
   hora_salida: "";
   monto: "";
 
-  EditarViaje: FormGroup;
+  editarViaje: FormGroup;
   isSubmitted = false;
 
   constructor(
@@ -85,38 +85,40 @@ export class EditarviajePage implements OnInit {
 
 
   ngOnInit() {
-    this.EditarViaje = this.formBuilder.group({
+    this.editarViaje = this.formBuilder.group({
       sede_viaje: ['', [Validators.required]],
       comunas_viaje: ['', [Validators.required]],
-      asientos: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(1), Validators.pattern(/^[1-8]/)]],
-      horaSalida: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern(/^[1-9]\d{1,4}$/)]],
-      tarifa: ['', [Validators.required, Validators.minLength(0), Validators.maxLength(5), Validators.pattern(/^[1-9]\d{1,5}$/)]],
+      asientos_disponibles: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(1), Validators.pattern(/^[1-8]/)]],
+      hora_salida: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern(/^[1-9]\d{1,4}$/)]],
+      monto: ['', [Validators.required, Validators.minLength(0), Validators.maxLength(5), Validators.pattern(/^[1-9]\d{1,5}$/)]],
     })
   }
 
   submitForm() {
     this.isSubmitted = true;
-    if (this.EditarViaje.valid) {
-      console.log(this.EditarViaje.value)
-      this.bd.registrarViaje(this.sede_viaje, this.comunas_viaje, this.asientos_disponibles, this.hora_salida, this.monto);
-      this.presentToast()
+    if (this.editarViaje.valid) {
+      console.log(this.editarViaje.value)
+      this.bd.modificarViaje(this.sede_viaje, this.comunas_viaje, this.asientos_disponibles, this.hora_salida, this.monto);
+      this.alerta()
       this.router.navigate(['/home'])
     } else {
-      this.presentToast2()
+      this.alertaa()
       return false;
     }
   }
 
-  async presentToast() {
+  async alerta() {
     const toast = await this.toastController.create({
-      message: 'Se ha agregado correctamente su viaje',
+      message: 'Se ha modificado correctamente el viaje',
+      position: "middle",
       duration: 1500
     });
     toast.present();
   }
-  async presentToast2() {
+  async alertaa() {
     const toast = await this.toastController.create({
-      message: 'Datos incompletos, porfavor de llenarlos correctamente',
+      message: 'Completa los datos :p',
+      position: "middle",
       duration: 1500
     });
     toast.present();

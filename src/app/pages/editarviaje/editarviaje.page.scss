@@ -1,41 +1,47 @@
-.bg {
-    --ion-background-color: #1a1d52;
-    --background: #1a1d52;
-  }
-  
-  .bg2 {
-    color: #21d6a0;
-  }
-  
-  .centrado {
+.bg{
+  --ion-background-color: #1a1d52 ;
+  --background: #1a1d52;
+}
+.bg2{
+  color: #21d6a0;
+}
+.centrado{
     text-align: center;
-  }
-  
-  .arrow {
-    position: absolute;
+}
+
+.arrow{
+    position:absolute;
     margin-left: 20px;
     width: 30px;
     height: 100px;
-  }
-  
-  .hamburger {
-    --background: #1a1d52;
-  }
-  
-  .iconsize {
-    position: flex;
-    height: 50px;
-    width: 50px;
-  }
-  
-  .bg3 {
-    --background: #21d6a0;
-  }
-  
-  .bg4 {
-    color: #1a1d52;
-  }
-  
-  .top {
-    margin-top: 20px;
-  }
+}
+.hamburger{
+  --background: #1a1d52;
+}
+.iconsize{
+  position: flex;
+  height: 50px;
+  width: 50px;
+}
+
+.perfil{
+  border-radius: 50%;
+  --border-radius: 50%;
+}
+
+.color2{
+  --background:#21d6a0;
+}
+
+.color{
+  color: #1a1d52;
+}
+.fondo{
+  background-color: #1a1d52;
+}
+.colorAlerta{
+  background-color: #5c5c5c;
+}
+.fondo {
+  --ion-background-color:#ffff !important;
+}

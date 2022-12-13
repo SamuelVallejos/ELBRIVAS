@@ -69,7 +69,7 @@ export class ConducirPage implements OnInit {
     const toast = await this.toastController.create({
       message: 'Se ha eliminado correctamente su viaje',
       position: "middle",
-      duration: 500
+      duration: 1500
     });
     toast.present();
   }

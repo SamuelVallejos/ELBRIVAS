@@ -9,7 +9,7 @@
 
 <ion-content class="bg">
 
-  <form [formGroup]="EditarViaje" (ngSubmit)="submitForm()">
+  <form [formGroup]="editarViaje" (ngSubmit)="submitForm()">
 
     <ion-list class="fondo">
       <ion-item class="bg bg2">
@@ -31,21 +31,19 @@
 
     <ion-item class="bg bg2">
       <ion-label position="stacked"></ion-label>
-      <ion-input formControlName="asientos" placeholder="Asientos Disponibles"></ion-input>
+      <ion-input formControlName="asientos_disponibles" placeholder="Asientos Disponibles"></ion-input>
     </ion-item>
     <ion-item class="bg bg2">
       <ion-label position="stacked"></ion-label>
-      <ion-input formControlName="horaSalida" placeholder="Hora de Salida Ejemplo: '1430'"></ion-input>
+      <ion-input formControlName="hora_salida" placeholder="Hora de Salida Ejemplo: '1430'"></ion-input>
     </ion-item>
     <ion-item class="bg bg2">
       <ion-label position="stacked"></ion-label>
-      <ion-input formControlName="tarifa" placeholder="Tarifa"></ion-input>
+      <ion-input formControlName="monto" placeholder="Tarifa"></ion-input>
     </ion-item>
 
     <h1 class="centrado">
-      <ion-button type="submit" (click)="submitForm()">Confirmar cambios de datos
-        <ion-icon name="checkmark-circle-outline"></ion-icon>
-      </ion-button>
+      <ion-button type="submit" (click)="submitForm()">Confirmar cambios de datos</ion-button>
     </h1>
 
   </form>

@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarviajePageRoutingModule } from './editarviaje-routing.module';
 
 import { EditarviajePage } from './editarviaje.page';
@@ -14,8 +13,9 @@ import { EditarviajePage } from './editarviaje.page';
     FormsModule,
     IonicModule,
     EditarviajePageRoutingModule,
-    
-  ],
+    FormsModule, 
+    ReactiveFormsModule
+    ],
   declarations: [EditarviajePage]
 })
 export class EditarviajePageModule {}
