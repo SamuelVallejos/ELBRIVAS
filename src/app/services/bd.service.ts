@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 import { AlertController, Platform } from '@ionic/angular';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Usuario } from './usuario';
+import { usuario } from './usuario';
 import { Vehiculo } from './vehiculo';
 import { Viaje } from './viaje';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -46,7 +46,7 @@ export class BdService {
   crearBD() {
     this.platform.ready().then(() => {
       this.sqlite.create({
-        name: 'bdusuario346.db',
+        name: 'bdusuario347.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
         this.database = db;
@@ -83,20 +83,20 @@ export class BdService {
   }
 
   // Usuario
-  fetchUsuario(): Observable<Usuario[]> {
+  fetchUsuario(): Observable<usuario[]> {
     return this.listaUsuario.asObservable();
   }
 
   buscarUsuario() {
     return this.database.executeSql('SELECT * FROM usuario', []).then(res => {
-      let items: Usuario[] = [];
+      let items: usuario[] = [];
       if (res.rows.length > 0) {
         for (var i = 0; i < res.rows.length; i++) {
           items.push({
-            id: res.rows.item(i).id_usuario,
+            id_usuario: res.rows.item(i).id_usuario,
             nombre: res.rows.item(i).nombre,
-            contrasena: res.rows.item(i).clave,
-            idr: res.rows.item(i).id_rol
+            clave: res.rows.item(i).clave,
+            id_rol: res.rows.item(i).id_rol
           })
         }
       }
@@ -104,21 +104,21 @@ export class BdService {
     })
   }
 
-  registrarUsuario(id, nombre, contrasena, idr) {
-    let data = [id, nombre, contrasena, idr];
+  registrarUsuario(id_usuario, nombre, clave, id_rol) {
+    let data = [id_usuario, nombre, clave, id_rol];
     return this.database.executeSql('INSERT INTO usuario(id_usuario, nombre, clave, id_rol) VALUES (?,?,?,?)', data).then(data2 => {
       this.buscarUsuario();
       // this.presentAlert("Registro del Usuario Realizado");
     })
   }
 
-  modificarUsuario(id, telefono) {
-    let data = [telefono, id];
-    return this.database.executeSql('UPDATE usuario SET telefono = ? WHERE id_usuario = ?', data).then(data2 => {
-      this.buscarUsuario();
-      // this.presentAlert("Usuario Modificado");
-    })
-  }
+  // modificarUsuario(id) {
+  //   let data = [id];
+  //   return this.database.executeSql('UPDATE usuario SET telefono = ? WHERE id_usuario = ?', data).then(data2 => {
+  //     this.buscarUsuario();
+  //     // this.presentAlert("Usuario Modificado");
+  //   })
+  // }
 
   eliminarUsuario(id) {
     return this.database.executeSql('DELETE FROM usuario WHERE id_usuario = ?', [id]).then(data2 => {

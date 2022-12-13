@@ -1,6 +1,6 @@
-export class Usuario {
-    id: number;
+export class usuario {
+    id_usuario: number;
     nombre: string;
-    contrasena: string;
-    idr: number;
+    clave: string;
+    id_rol: string;
 }

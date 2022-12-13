@@ -24,6 +24,12 @@ export class ApiService {
       retry(3)
     );
   }
+  getPostsuserID(id):Observable<any>{ 
+    return this.http.get(this.apiURLuser+'/users/'+id).pipe(
+      retry(3)
+    );
+  }
+
 
   getPostsvehiculo(): Observable<any> {
     return this.http.get(this.apiURLvehiculo+'/autos/').pipe(

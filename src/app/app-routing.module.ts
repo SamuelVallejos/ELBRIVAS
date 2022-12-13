@@ -1,14 +1,7 @@
-import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AutoLoginGuard } from './guards/auto-login.guard';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    canLoad: [AuthGuard]
-  },
   {
     path: '',
     redirectTo: 'inicio-sesion',
@@ -16,68 +9,59 @@ const routes: Routes = [
   },
   {
     path: 'inicio-sesion',
-    loadChildren: () => import('./pages/inicio-sesion/inicio-sesion.module').then(m => m.InicioSesionPageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/inicio-sesion/inicio-sesion.module').then(m => m.InicioSesionPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'rcontrasena',
-    loadChildren: () => import('./pages/rcontrasena/rcontrasena.module').then(m => m.RcontrasenaPageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/rcontrasena/rcontrasena.module').then(m => m.RcontrasenaPageModule)
   },
   {
     path: 'registro',
-    loadChildren: () => import('./pages/registro/registro.module').then(m => m.RegistroPageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/registro/registro.module').then(m => m.RegistroPageModule)
   },
   {
     path: 'conducir',
-    loadChildren: () => import('./pages/conducir/conducir.module').then(m => m.ConducirPageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/conducir/conducir.module').then(m => m.ConducirPageModule)
   },
   {
     path: 'viaje',
-    loadChildren: () => import('./pages/viaje/viaje.module').then(m => m.ViajePageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/viaje/viaje.module').then(m => m.ViajePageModule)
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./pages/perfil/perfil.module').then(m => m.PerfilPageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/perfil/perfil.module').then(m => m.PerfilPageModule)
   },
   {
     path: 'formulario-vehiculo',
-    loadChildren: () => import('./pages/formulario-vehiculo/formulario-vehiculo.module').then(m => m.FormularioVehiculoPageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/formulario-vehiculo/formulario-vehiculo.module').then(m => m.FormularioVehiculoPageModule)
   },
   {
     path: 'editarperfil',
-    loadChildren: () => import('./pages/editarperfil/editarperfil.module').then(m => m.EditarperfilPageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/editarperfil/editarperfil.module').then(m => m.EditarperfilPageModule)
   },
   {
     path: 'viajeextra',
-    loadChildren: () => import('./pages/viajeextra/viajeextra.module').then(m => m.ViajeextraPageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/viajeextra/viajeextra.module').then(m => m.ViajeextraPageModule)
   },
   {
     path: 'misvehiculos',
-    loadChildren: () => import('./pages/misvehiculos/misvehiculos.module').then( m => m.MisvehiculosPageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/misvehiculos/misvehiculos.module').then(m => m.MisvehiculosPageModule)
   },
   {
     path: 'agregarvehiculo',
-    loadChildren: () => import('./pages/agregarvehiculo/agregarvehiculo.module').then( m => m.AgregarvehiculoPageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/agregarvehiculo/agregarvehiculo.module').then(m => m.AgregarvehiculoPageModule)
   },
   {
     path: 'crearviaje',
-    loadChildren: () => import('./pages/crearviaje/crearviaje.module').then( m => m.CrearviajePageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/crearviaje/crearviaje.module').then(m => m.CrearviajePageModule)
   },
   {
     path: 'acercade',
-    loadChildren: () => import('./pages/acercade/acercade.module').then( m => m.AcercadePageModule),
-    canLoad: [AuthGuard]
+    loadChildren: () => import('./pages/acercade/acercade.module').then(m => m.AcercadePageModule)
   },
   {
     path: '**',
@@ -89,6 +73,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule]  
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
