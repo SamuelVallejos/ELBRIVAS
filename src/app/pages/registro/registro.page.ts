@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import { BdService } from 'src/app/services/bd.service';
 
 @Component({
@@ -11,6 +11,12 @@ import { BdService } from 'src/app/services/bd.service';
 })
 export class RegistroPage implements OnInit {
 
+  nombre: "";
+  clave: "";
+  id_usuario: "";
+  id_rol: "";
+
+
   FormularioUsuario: FormGroup;
   isSubmitted = false;
 
@@ -18,9 +24,10 @@ export class RegistroPage implements OnInit {
     public formBuilder: FormBuilder,
     public router: Router,
     public route: ActivatedRoute,
+    public toastController: ToastController,
     public alertController: AlertController,
     public loading: LoadingController,
-    private bd : BdService
+    private bd: BdService
   ) { }
 
   static confirmPassword(control: FormControl, group: FormGroup, matchPassword: string) {
@@ -53,13 +60,32 @@ export class RegistroPage implements OnInit {
     })
   }
 
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Felicitaciones, bienvenido a DRIVOLO',
+      duration: 1500
+    });
+    toast.present();
+  }
+
+  async presentToast2() {
+    const toast = await this.toastController.create({
+      message: 'Datos incompletos, porfavor de llenarlos correctamente',
+      duration: 1500
+    });
+    toast.present();
+  }
+
+
   submitForm() {
     this.isSubmitted = true;
     if (this.FormularioUsuario.valid) {
       console.log(this.FormularioUsuario.value)
+      this.bd.registrarUsuario(this.nombre, this.clave, this.id_usuario, this.id_rol);
+      this.presentToast()
       this.router.navigate(['/home'])
     } else {
-      console.log('Datos incompletos, porfavor de llenarlos correctamente')
+      this.presentToast2()
       return false;
     }
   }

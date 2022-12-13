@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import { BdService } from 'src/app/services/bd.service';
 
 @Component({
@@ -67,9 +67,9 @@ export class CrearviajePage implements OnInit {
 
   sede_viaje: "";
   comunas_viaje: "";
-  asientos: "";
-  horaSalida: "";
-  tarifa: "";
+  asientos_disponibles: "";
+  hora_salida: "";
+  monto: "";
 
   FormularioViaje: FormGroup;
   isSubmitted = false;
@@ -78,6 +78,7 @@ export class CrearviajePage implements OnInit {
     public formBuilder: FormBuilder,
     public router: Router,
     public route: ActivatedRoute,
+    public toastController: ToastController,
     public alertController: AlertController,
     public loading: LoadingController,
     private bd: BdService) { }
@@ -97,21 +98,27 @@ export class CrearviajePage implements OnInit {
     this.isSubmitted = true;
     if (this.FormularioViaje.valid) {
       console.log(this.FormularioViaje.value)
-      this.bd.registrarViaje(this.sede_viaje, this.comunas_viaje, this.asientos, this.horaSalida, this.tarifa);
-      this.bd.presentAlert("Usuario Registrada");
+      this.bd.registrarViaje(this.sede_viaje, this.comunas_viaje, this.asientos_disponibles, this.hora_salida, this.monto);
+      this.presentToast()
       this.router.navigate(['/misvehiculos'])
     } else {
-      console.log('Datos incompletos, porfavor de llenarlos correctamente')
+      this.presentToast2()
       return false;
     }
   }
 
-  async presentAlert(msj: string) {
-    const alert = await this.alertController.create({
-      header: 'Viaje Creado',
-      message: 'Tu viaje se a creado correctamente',
-      buttons: ['OK'],
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Se ha agregado correctamente su viaje',
+      duration: 1500
     });
-    await alert.present();
+    toast.present();
+  }
+  async presentToast2() {
+    const toast = await this.toastController.create({
+      message: 'Datos incompletos, porfavor de llenarlos correctamente',
+      duration: 1500
+    });
+    toast.present();
   }
 }

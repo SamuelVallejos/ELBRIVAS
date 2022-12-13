@@ -1,5 +1,6 @@
 export class Viaje {
-    id: number;
+    id_viaje: number;
+    id_usuario: number;
     hora_salida: string;
     asientos_disponibles: String;
     monto: number;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController,ToastController } from '@ionic/angular';
 import { BdService } from 'src/app/services/bd.service';
 
 @Component({
@@ -22,6 +22,7 @@ export class AgregarvehiculoPage implements OnInit {
     public formBuilder: FormBuilder,
     public router: Router,
     public route: ActivatedRoute,
+    public toastController: ToastController,
     public alertController: AlertController,
     public loading: LoadingController,
     private bd: BdService
@@ -34,13 +35,20 @@ export class AgregarvehiculoPage implements OnInit {
     })
   }
 
-  async presentAlert(msj: string) {
-    const alert = await this.alertController.create({
-      header: 'Vehiculo Agregado',
-      message: 'Tu vehiculo se a agregado correctamente!',
-      buttons: ['OK'],
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Se ha agregado correctamente su vehiculo',
+      duration: 1500
     });
-    await alert.present();
+    toast.present();
+  }
+
+  async presentToast2() {
+    const toast = await this.toastController.create({
+      message: 'Datos incompletos, porfavor de llenarlos correctamente',
+      duration: 1500
+    });
+    toast.present();
   }
 
   submitForm() {
@@ -48,10 +56,10 @@ export class AgregarvehiculoPage implements OnInit {
     if (this.FormularioNewCar.valid) {
       console.log(this.FormularioNewCar.value)
       this.bd.registrarVehiculo(this.patente, this.marca, this.id_usuario);
-      this.bd.presentAlert("Usuario Registrada");
+      this.presentToast()
       this.router.navigate(['/misvehiculos'])
     } else {
-      console.log('Datos incompletos, porfavor de llenarlos correctamente')
+      this.presentToast2()
       return false;
     }
   }

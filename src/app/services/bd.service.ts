@@ -20,12 +20,12 @@ export class BdService {
   }
 
   // Create Table
-  usuarioD: string = "CREATE TABLE IF NOT EXISTS usuario(id_usuario INTEGER PRIMARY KEY autoincrement,nombre VARCHAR(100),clave varchar(16),id_rol INTEGER);"
-  autoD: string = "CREATE TABLE IF NOT EXISTS vehiculo(patente NUMBER PRIMARY KEY,marca VARCHAR(20) NOT NULL, id_usuario VARCHAR(20));"
-  viajeD: string = "CREATE TABLE IF NOT EXISTS viaje(id_viaje INTEGER PRIMARY KEY autoincrement,hora_salida VARCHAR(6), asientos_disponibles number, monto NUMBER, sede_viaje VARCHAR(30), comunas_viaje VARCHAR(30));"
+  usuarioD: string = "CREATE TABLE IF NOT EXISTS usuario(id_usuario INTEGER PRIMARY KEY autoincrement, nombre VARCHAR(100), clave varchar(16), id_rol NOT NULL);"
+  autoD: string = "CREATE TABLE IF NOT EXISTS vehiculo(patente NUMBER PRIMARY KEY, marca VARCHAR(20) NOT NULL, id_usuario INTEGER, foreign key(id_usuario) references usuario(id_usuario));"
+  viajeD: string = "CREATE TABLE IF NOT EXISTS viaje(id_viaje INTEGER PRIMARY KEY autoincrement, id_usuario INTEGER, hora_salida VARCHAR(6), asientos_disponibles INTEGER, monto INTEGER, sede_viaje VARCHAR(30), comunas_viaje VARCHAR(30), foreign key(id_usuario) references vehiculo(id_usuario));"
 
   // intos
-  intoViaje: string = "INSERT or IGNORE INTO viaje(id_viaje, hora_salida, asientos_disponibles, monto, sede_viaje, comunas_viaje) VALUES (3,1300,4,1000,Plaza Norte,Colina);"
+  intoViaje: string = "INSERT or IGNORE INTO viaje(id_viaje, id_usuario, hora_salida, asientos_disponibles, monto, sede_viaje, comunas_viaje) VALUES (3, 1300, 4, 1000, Plaza Norte, Colina);"
 
   public database: SQLiteObject;
 
@@ -46,7 +46,7 @@ export class BdService {
   crearBD() {
     this.platform.ready().then(() => {
       this.sqlite.create({
-        name: 'bdusuario347.db',
+        name: 'bdusuario401.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
         this.database = db;
@@ -176,7 +176,8 @@ export class BdService {
       if (res.rows.length > 0) {
         for (var i = 0; i < res.rows.length; i++) {
           items.push({
-            id: res.rows.item(i).id_viaje,
+            id_viaje: res.rows.item(i).id_viaje,
+            id_usuario: res.rows.item(i).id_usuario,
             hora_salida: res.rows.item(i).hora_salida,
             asientos_disponibles: res.rows.item(i).asientos_disponibles,
             monto: res.rows.item(i).monto,
@@ -206,8 +207,8 @@ export class BdService {
     })
   }
 
-  eliminarViaje(id) {
-    return this.database.executeSql('DELETE FROM viaje WHERE id_viaje = ?', [id]).then(data2 => {
+  eliminarViaje(id_viaje) {
+    return this.database.executeSql('DELETE FROM viaje WHERE id_viaje = ?', [id_viaje]).then(data2 => {
       this.buscarViaje();
       // this.presentAlert("Viaje Eliminado");
     })
