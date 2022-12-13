@@ -5,12 +5,13 @@ import { ApiService } from 'src/app/services/api.service';
 import { BdService } from 'src/app/services/bd.service';
 
 @Component({
-  selector: 'app-conducir',
-  templateUrl: './conducir.page.html',
-  styleUrls: ['./conducir.page.scss'],
+  selector: 'app-viajes',
+  templateUrl: './viajes.component.html',
+  styleUrls: ['./viajes.component.scss'],
 })
-export class ConducirPage implements OnInit {
-  @Input() automovil: any;
+export class ViajesComponent implements OnInit {
+
+  @Input() texto:any;
 
   viajes: any = [{
     id_viaje: '',
@@ -27,34 +28,23 @@ export class ConducirPage implements OnInit {
     private bd: BdService,
     public toastController: ToastController,
     public router: Router,
-    public route: ActivatedRoute,
-  ) {
-    this.api.getPostsvehiculo().subscribe((res) => {
-      this.automovil = res;
-      console.log(res[0]);
-    }, (error) => {
-      console.log(error);
-    });
-  }
+    public route: ActivatedRoute
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() {     
     this.bd.dbState().subscribe((res) => {
-      if (res) {
-        this.bd.fetchViaje().subscribe((item) => {
-          this.viajes = item;
-        })
-      }
-    })
-  }
-
-  eliminar(v) {
-    this.bd.eliminarViaje(v.id_viaje);
-    this.alerta()
-  }
+    if (res) {
+      this.bd.fetchViaje().subscribe((item) => {
+        this.viajes = item;
+      })
+    }
+  })}
 
   editar(v) {
     let navigationExtras: NavigationExtras = {
       state: {
+        id: v.id_viaje,
+        id_user: v.id_usuario,
         salida: v.hora_salida,
         asientos: v.asientos_disponibles,
         monto: v.monto,
@@ -65,12 +55,26 @@ export class ConducirPage implements OnInit {
     this.router.navigate(['/editarviaje'], navigationExtras);
   }
 
-  async alerta() {
+  eliminar(v) {
+    this.bd.eliminarViaje(v.id_viaje);
+    this.presentToast()
+  }
+
+  async presentToast() {
     const toast = await this.toastController.create({
       message: 'Se ha eliminado correctamente su viaje',
-      position: "middle",
-      duration: 500
+      duration: 1500
     });
     toast.present();
   }
+
+  async presentToast2() {
+    const toast = await this.toastController.create({
+      message: 'Se ha editado correctamente su viaje',
+      duration: 1500
+    });
+    toast.present();
+  }
+
+
 }

@@ -5,11 +5,11 @@ import { AlertController, LoadingController, ToastController } from '@ionic/angu
 import { BdService } from 'src/app/services/bd.service';
 
 @Component({
-  selector: 'app-crearviaje',
-  templateUrl: './crearviaje.page.html',
-  styleUrls: ['./crearviaje.page.scss'],
+  selector: 'app-editarviaje',
+  templateUrl: './editarviaje.page.html',
+  styleUrls: ['./editarviaje.page.scss'],
 })
-export class CrearviajePage implements OnInit {
+export class EditarviajePage implements OnInit {
 
   sedes: any = [
     {
@@ -71,7 +71,7 @@ export class CrearviajePage implements OnInit {
   hora_salida: "";
   monto: "";
 
-  FormularioViaje: FormGroup;
+  EditarViaje: FormGroup;
   isSubmitted = false;
 
   constructor(
@@ -85,7 +85,7 @@ export class CrearviajePage implements OnInit {
 
 
   ngOnInit() {
-    this.FormularioViaje = this.formBuilder.group({
+    this.EditarViaje = this.formBuilder.group({
       sede_viaje: ['', [Validators.required]],
       comunas_viaje: ['', [Validators.required]],
       asientos: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(1), Validators.pattern(/^[1-8]/)]],
@@ -96,8 +96,8 @@ export class CrearviajePage implements OnInit {
 
   submitForm() {
     this.isSubmitted = true;
-    if (this.FormularioViaje.valid) {
-      console.log(this.FormularioViaje.value)
+    if (this.EditarViaje.valid) {
+      console.log(this.EditarViaje.value)
       this.bd.registrarViaje(this.sede_viaje, this.comunas_viaje, this.asientos_disponibles, this.hora_salida, this.monto);
       this.presentToast()
       this.router.navigate(['/home'])

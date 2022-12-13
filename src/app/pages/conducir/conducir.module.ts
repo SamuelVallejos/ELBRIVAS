@@ -8,6 +8,7 @@ import { ConducirPageRoutingModule } from './conducir-routing.module';
 
 import { ConducirPage } from './conducir.page';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { ViajesComponent } from 'src/app/components/viajes/viajes.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ConducirPageRoutingModule,
     MatExpansionModule
   ],
-  declarations: [ConducirPage]
+  declarations: [ConducirPage, ViajesComponent]
 })
 export class ConducirPageModule { }

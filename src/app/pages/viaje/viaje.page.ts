@@ -28,6 +28,7 @@ export class ViajePage implements OnInit {
   ViajeClick() {
     this.router.navigate(['home/viaje']);
   }
+  
   ngOnInit() {
   }
 }

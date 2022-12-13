@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { BdService } from 'src/app/services/bd.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class MisvehiculosPage implements OnInit {
   }]
 
   constructor(
-    private bd: BdService
+    private bd: BdService,
+    public toastController: ToastController,
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,16 @@ export class MisvehiculosPage implements OnInit {
 
   eliminar(v) {
     this.bd.eliminarVehiculo(v.patente);
-    this.bd.presentAlert("Vehiculo Eliminado");
+    this.presentToast()
   }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Se ha eliminado correctamente su Vehiculo',
+      position: "middle",
+      duration: 500
+    });
+    toast.present();
+  }
+
 }
